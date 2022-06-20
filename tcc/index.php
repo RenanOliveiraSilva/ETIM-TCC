@@ -78,7 +78,7 @@
                     <li>
                       <div class="collapsible-header active">Cadastro da plantação</div>
                       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                      <a class="btn right " href = "cad_plant.php">button</a>
+                      <a class="btn right " href = "forms/cad_plant.php">button</a>
                     </div>
                     </li>
                     <li>

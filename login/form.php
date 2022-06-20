@@ -121,6 +121,7 @@ p{
                           <input type="submit" class="btn-large" value="Entrar">
                         </div>
                     <p>Não tem uma conta? <a href="register.php">Crie uma!</a> </p>
+                    
                   </form>
             </div>
             </div>

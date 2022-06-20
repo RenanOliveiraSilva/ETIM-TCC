@@ -66,7 +66,7 @@
             <div class="container barra">
                   <div class="card">
                     <div class="card-image">
-                      <img src="../Tcc/imagem/card1.jpg">
+                      <img src="../ETIM-TCC/imagem/card1.jpg">
                       <span class="card-title">Gestão da Plantação</span>
                     </div>
                     <div class="card-content">
@@ -82,7 +82,7 @@
             <div class="container barra">
                   <div class="card">
                     <div class="card-image">
-                      <img src="../Tcc/imagem/gastos.jpg">
+                      <img src="../ETIM-TCC/imagem/gastos.jpg">
                       <span class="card-title">Gestão da Gastos</span>
                     </div>
                     <div class="card-content">
@@ -98,7 +98,7 @@
             <div class="container barra">
                   <div class="card">
                     <div class="card-image">
-                      <img src="../Tcc/imagem/lucros.jpg">
+                      <img src="../ETIM-TCC/imagem/lucros.jpg">
                       <span class="card-title">Tabela de Lucros</span>
                     </div>
                     <div class="card-content">

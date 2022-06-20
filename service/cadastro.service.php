@@ -11,7 +11,7 @@
 
         public function inserir()
         {
-            $query = "insert into cadastro (id_users, nomePlanta, tipo, qtdPlantada, tempo, tamanho, correcao)values(:id_users, :nomePlanta, :tipo, :qtdPlantada, :tempo, :tamanho, :correcao)";
+            $query = "insert into cadastro (id_users, nomePlanta, tipo, qtdPlantada, tempo, tamanho, correcao) values (:id_users, :nomePlanta, :tipo, :qtdPlantada, :tempo, :tamanho, :correcao)";
         
             $stmt = $this->conexao->prepare($query);
 
