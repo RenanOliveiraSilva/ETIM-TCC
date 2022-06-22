@@ -29,7 +29,7 @@
           <img src="./images/logo.png" class="login__logo">
           <h1 class="login__tittle">Fazer Login</h1>
 
-
+          <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "post" >
             <label class="login__label">
 
               <span>Nome de Usuário</span>
@@ -41,17 +41,18 @@
             <label class="login__label">
 
               <span>Senha</span>
-              <input type="password" name="password" class="input <?php echo (!empty($pass_erro)) ? 'is-invalid' : ''; ?>" value="<?php echo $senha; ?>">
+              <input type="password" name="senha" class="input <?php echo (!empty($pass_erro)) ? 'is-invalid' : ''; ?>" value="<?php echo $senha; ?>">
               <span class="invalid-feedback"><?php echo $pass_erro; ?></span>
 
             </label>
-  
 
+            <div class="form-group">
+              <input type="submit" class="btn-large" value="Entrar">
+            </div>            
+        </form>
 
       
-          <div class="form-group">
-          <input type="submit" class="btn-large" value="Entrar">
-          </div>
+
 
           <a href="register.php" class="login__link">Criar Conta</a>
 
