@@ -1,22 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
-
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Lexend Deca", sans-serif;
-
 }
 
 main {
     display: flex;
 }
 
-
-
 :root {
-
     --white: #FFF;
     --whitesmoke: #F9F9F9;
     --light-grey: #ECECEC;
@@ -24,9 +18,8 @@ main {
     --medium-grey: #A7A7A7;
     --deep-grey: #343434;
     --black: #000000;
-    --blue: #1B77F3;
     --red: #CF3C3F;
-
+    --green: #006600;
 }
 
 .cadastro {
@@ -36,46 +29,57 @@ main {
 .login {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     min-height: 100vh;
-    padding: clamp(35px, 8%, 70px);
+    padding: clamp(35px, 8%, 30px);
 }
 
 .wrapper {
     width: 100%;
     display: flex;
-    color: #1B77F3;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .form {
-  margin: 0px;
+    margin: 0px;
 }
 
-.login__tittle{
-    color: green;
+.close__button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+}
+
+.close__button:hover {
+    transform: rotate(90deg);
+}
+
+.login__tittle {
+    color: var(--green);
     font-size: 1.5em;
     margin-bottom: 30px;
 }
 
-.login__logo{
-    width: 130px;
-    margin-bottom: 80px;
-
+.login__logo {
+    width: 200px;
+    margin-bottom: 50px;
 }
 
-.login__label{
+.login__label {
     display: block;
     margin-bottom: 20px;
     width: 100%;
 }
 
-.input{
+.input {
     width: 100%;
     border: 2px solid rgba(0, 0, 0, 0);
     background-color: var(--light-grey);
@@ -85,7 +89,6 @@ main {
     padding: 25px 10px 10px;
     font-weight: 600;
     color: var(--deep-grey);
-
 }
 
 .login__label span {
@@ -104,7 +107,7 @@ main {
     border: 2px solid var(--deep-grey);
 }
 
-.login__label .span-active{
+.login__label .span-active {
     font-size: 0.7em;
     margin: 8px 10px;
 }
@@ -114,7 +117,6 @@ main {
     gap: 10px;
     margin-top: 20px;
     width: 100%;
-
 }
 
 .login__icons img {
@@ -130,8 +132,7 @@ main {
     border-radius: 5px;
     cursor: pointer;
     border: none;
-
-  }
+}
 
 .login__icons .icons__button:nth-child(1) {
     background-color: var(--blue);
@@ -161,16 +162,14 @@ main {
     background-color: var(--light-grey);
     margin-right: 8px;
     border-radius: 3px;
-
 }
 
 .input--checkbox:checked {
     background-color: var(--red);
-
 }
 
 .input--checkbox:checked::after {
-    content:  "";
+    content: "";
     display: block;
     width: 5px;
     height: 10px;
@@ -178,7 +177,6 @@ main {
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
     margin: 2px 6px;
-    
 }
 
 .login__button {
@@ -188,12 +186,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--red);
+    background-color: var(--green);
     border-radius: 20px;
     border: none;
     cursor: pointer;
     margin-bottom: 60px;
-
 }
 
 .login__button svg {
@@ -204,7 +201,6 @@ main {
     cursor: auto;
     background-color: white;
     border: 2px solid var(--light-grey)
-
 }
 
 .login__button:disabled svg {
@@ -221,13 +217,27 @@ main {
 }
 
 .login__link:hover {
-    color: var(--red);
+    color: var(--green);
 }
 
 .wallpaper {
     width: 100%;
-    background-image: url('./images/wallpaper.jpg');
+    background-image: url('imagem/wallpaper.jpg');
     background-size: cover;
     background-position: center;
     flex: 1;
-  }
+}
+
+.alert {
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #CF3C3F;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.closebtn {
+    cursor: pointer;
+}

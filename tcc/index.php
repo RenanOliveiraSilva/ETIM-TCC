@@ -1,3 +1,12 @@
+<?php 
+  session_start();
+  if(!isset($_SESSION["username"])) {
+    header('location: ../login/login.php');
+  }
+
+?> 
+
+
 <!DOCTYPE html>
 
   <html>
@@ -64,10 +73,7 @@
 
         <?php
 
-            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                header("location: ../login/login.php");
-                exit;
-            }
+
 
             require_once 'navtcc.php';
         ?>

@@ -10,7 +10,6 @@
         private $data_plantada;
         private $data_colheita;
         private $tamanho;
-        private $correcao;
         
         public function __set($atributo,$valor){
             $this->$atributo = $valor;

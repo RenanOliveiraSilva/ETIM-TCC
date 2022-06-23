@@ -1,103 +1,90 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-          html,body {
-  font-family: "light italic";
-  font-size: 18px;
-  font-weight: 300;
-  
-}
+      <link rel="stylesheet" href="../style.css">
+      
+      <script src="../script.js" defer></script>
+      
+      <title>Private Agro</title>
 
-.card{
-  background-color: #E5ECF1;
-  left: 50%;
-  top: 195px;
-}
-.btn-large{
-  display: inline-block;
-  font-size: 18px;
-  text-align: center;
-  border: 0;
-  border-radius: 64px;
-  padding: 2px 10px;
-  color: #ffffff;
-  background-color: #A4A820 ;
-  cursor: pointer;
-  overflow: hidden;
-  transform: translate(0);
-}
-.btn-large::before{
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, #A4A820,  #A1BB11);
-  transition: 0.4s ease;
-  transform: scaleX(0);
-  transform-origin: 100% 0%;
-}
-.btn-large:hover::before{
-  transform: scaleX(1.1) scaleY(1.1);
-}
-h2{
-  margin: 15px;
-  margin-top: 15px;
-}
-p{
-  font-size: 20px;
-  font-family: "light italic";
-  margin: 10px;
-}
-
-
-        </style>
 
     </head>
-<body background = "../imagem/cadastro.jpg">
-  <div class = "container">
-    <div class="row">
-      <div class="col s6 m6">
-        <div class="card">
-  <h2>Criar conta</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-      <div class="input-field col s12 m12 l12">
-          <label>Nome do usuário</label>
-          <input type="text" name="usuario" class="form-control <?php echo (!empty($user_erro)) ? 'is-invalid' : ''; ?>" value="<?php echo $usuario; ?>" data-length="25">
-          <span class="invalid-feedback"><?php echo $user_erro; ?></span>
-        </div>    
-        <div class="input-field col s12 m12 l12">
-          <label>Senha</label>
-          <input type="password" name="senha" class="form-control <?php echo (!empty($pass_erro)) ? 'is-invalid' : ''; ?>" value="<?php echo $pass; ?>" data-length="15">
-          <span class="invalid-feedback"><?php echo $pass_erro; ?></span>
-        </div>
-        <div class="input-field col s12 m12 l12">
-          <label>Confirme a senha</label>
-          <input type="password" name="pass_confirm" class="form-control <?php echo (!empty($confirm_pass_erro)) ? 'is-invalid' : ''; ?>" value="<?php echo $pass_confirm; ?>" data-length="15">
-          <span class="invalid-feedback"><?php echo $confirm_pass_erro; ?></span>
-        </div>
-        <div class="input-field col s12 m12 l12">
-          <input type="submit" class="btn-large" value="Criar Conta">
-          <input type="reset" class="btn-large" value="Apagar Dados">
-      </div>
-      <p> Já tem uma conta? <a href="login.php">Entre aqui</a></p>
-    </form>
-    </div>
-    </div>
-    </div>
-  </div>
 
-</body>
+    <body>
+
+      <main>
+        <section class="login">
+
+          <div class="close">
+            <a href="http://localhost/3etimds2022/ETIM-TCC/">
+            <button type="submit" class = "close__button">
+
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="48" height="48"
+              viewBox="0 0 48 48"
+              style=" fill:#000000;"><path fill="#F4  4336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)"></path><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)"></path>
+            </svg>
+
+            </a>
+          </div>
+
+          <div class="wrapper">
+
+            <img src="../imagem/logo.jpg" class="login__logo">
+
+            <h1 class="login__tittle">Criar Conta</h1>
+
+            <form class = "cadastro" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+              <label class="login__label">
+
+                <span>Nome de Usuário</span>
+                <input type="text" name="usuario" class="input <?php echo (!empty($user_erro)) ? 'is-invalid' : ''; ?>" value="<?php  $usuario; ?>">
+                <span class="invalid-feedback"><?php echo $user_erro; ?></span>
+
+              </label>
+
+              <label class="login__label">
+
+                <span>Senha</span>
+                <input type="password" name="senha" class="input <?php echo (!empty($pass_erro)) ? 'is-invalid' : ''; ?>" value="<?php  $pass; ?>">
+                <span class="invalid-feedback"><?php echo $pass_erro; ?></span>
+
+              </label>
+
+              <label class="login__label">
+
+                <span>Confirme a Senha</span>
+                <input type="password" name="pass_confirm" class="input <?php echo (!empty($confirm_pass_erro)) ? 'is-invalid' : ''; ?>" value="<?php  $pass_confirm; ?>">
+                <span class="invalid-feedback"><?php echo $confirm_pass_erro; ?></span>
+                
+              </label>
+
+              <div class="wrapper">
+                  <button type="submit" class = "login__button" disabled>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/>
+                  </svg>
+              </div>
+                
+              
+
+            </form>
+
+            <a href="login.php" class="login__link">Já possui uma conta? Entre aqui!</a>
+
+          </div>
+
+        </section>
+
+        <section class="wallpaper"></section>
+
+      </main>
+
+    </body>
 
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

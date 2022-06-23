@@ -18,7 +18,6 @@
         $cadastro->__set('qtdPlantada',$_POST['qtdPlantada']);
         $cadastro->__set('tempo',$_POST['tempo']);
         $cadastro->__set('tamanho',$_POST['tamanho']);
-        $cadastro->__set('correcao',$_POST['correcao']);
         
         $conexao = new Conexao();
 	
