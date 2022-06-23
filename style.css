@@ -53,16 +53,20 @@ main {
     justify-content: center;
 }
 
+.form {
+  margin: 0px;
+}
+
+.login__tittle{
+    color: green;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
 .login__logo{
     width: 130px;
     margin-bottom: 80px;
 
-}
-
-.login__tittle{
-    color: var(--red);
-    font-size: 1.5em;
-    margin-bottom: 30px;
 }
 
 .login__label{
