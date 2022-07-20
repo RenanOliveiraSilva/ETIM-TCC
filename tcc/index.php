@@ -13,6 +13,7 @@
 
     <head>
 
+    
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -21,96 +22,79 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+      <link rel="stylesheet" href="index_tcc.css">
 
       <style>
 
-          html,body {
-            font-family: "light italic";
-            font-size: 18px;
-            
         
-          }
-         nav {
-            background:#753F2D;
-          }
-          .btn{
-            text-decoration: none;
-            font-size: 15px;
-            color: #000000;
-            padding: 0px 15px;
-            border: 3px solid #1fe8b6;
-            position: relative;
-          }
-          .btn::before,
-          .btn::after{
-            content: "";
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border: inherit;
-            transition: all .5s;
-          }
-          .btn::before{
-            top: -15px;
-            left: -15px;
-            border-width: 3px 0 0 3px;
-          }
-          .btn::after{
-            bottom: -15px;
-            right: -15px;
-            border-width: 0 3px 3px 0;
-          }
-          .btn:hover::before,
-          .btn:hover::after{
-            width: calc(100% + 27px);
-            height: calc(100% + 27px);
-          }
-      </style>
+
+        </style>
+
 
     </head>
     
-    <body >
+    <body background = "../imagem/terra.webp">
 
         <?php
-
-
-
             require_once 'navtcc.php';
         ?>
 
               <div class="row">
-                <div class="col s12 m4 l3"> 
-                  <ul class="collapsible " data-collapsible="expandable">
-                    <li>
-                      <div class="collapsible-header active">Cadastro da plantação</div>
-                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                      <a class="btn right " href = "cad_plant.php">button</a>
+                <div class="col s12 m4 l3 barra"> 
+                  <ul class="collapsible " data-collapsible="accordion">
+                    <li class="li">
+                      <div class="collapsible-header"><font size="5">Cadastro da plantação</font></div>
+                      <div class="collapsible-body"><span><font size="4">Clique aqui para fazer <br> seu cadastro da plantação.</font></span>
+                      <a class="btn right " href="cad_plant.php">button</a>
                     </div>
                     </li>
-                    <li>
-                      <div class="collapsible-header active">Second</div>
-                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                    <li class="li">
+                      <div class="collapsible-header"><font size="5">Gestão de gastos</font></div>
+                      <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> sua gestão de gastos.</font></span>
                       <a class="btn right">button</a>
                     </div>
                     </li>
-                    <li>
-                      <div class="collapsible-header active">Third</div>
-                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                    <li class="li">
+                      <div class="collapsible-header"><font size="5">Previsão para a colheita</font></div>
+                      <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> a previsão para a colheita.</font></span>
                       <a class="btn right">button</a>
                     </div>
                     </li>
-                    <li>
-                      <div class="collapsible-header active">Third</div>
-                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                    <li class="li">
+                      <div class="collapsible-header"><font size="5">Tabela de lucros</font></div>
+                      <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> a tabela de lucros.</font></span>
                       <a class="btn right">button</a>
                     </div>
                     </li>
                   </ul>
                 </div>
                 <div class="col s12 m8 l9">
-                <div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
+                <div class="slider">
+                  <ul class="slides">
+                    <li>
+                      <img src="../imagem/cadastro.jpg"> <!-- random image -->
+                    </li>
+                    <li>
+                      <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+                      <div class="caption left-align">
+                        <h3>Left Aligned Caption</h3>
+                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                      </div>
+                    </li>
+                    <li>
+                      <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+                      <div class="caption right-align">
+                        <h3>Right Aligned Caption</h3>
+                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                      </div>
+                    </li>
+                    <li>
+                      <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+                    </li>
+                  </ul>
                 </div>
-              </div>
+                 </div>
+            </div>
 
 
 
@@ -125,6 +109,19 @@
                 $('.collapsible').collapsible();
                 });
 
+                $(document).ready(function(){
+                    $('.slider').slider();
+                  });
+
+                // Pause slider
+                $('.slider').slider('pause');
+                // Start slider
+                $('.slider').slider('start');
+                // Next slide
+                $('.slider').slider('next');
+                // Previous slide
+                $('.slider').slider('prev');
+                
             </script>
 
 </html>

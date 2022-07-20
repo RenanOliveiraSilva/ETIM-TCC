@@ -1,0 +1,93 @@
+html,
+body {
+    font-family: "light italic";
+    font-size: 18px;
+    /* background-image: url(https://cdn.awsli.com.br/600x450/518/518209/produto/21442484/1f011ee42e.jpg); */
+}
+
+.barra {
+    padding: 20px !important;
+    height: 800px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+}
+
+nav {
+    background: #753F2D;
+}
+
+.nav-mobile {
+    list-style: none;
+    display: flex;
+    column-gap: 20px;
+}
+
+.linha {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+}
+
+.linha::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #8A513E;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+}
+
+.linha:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+li.li {
+    width: auto;
+    background-color: #fff;
+    border-color: #009933;
+    border-left: solid 10px #009933;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    background-color: #05A83C;
+    padding: 0px 15px;
+    border: 3px solid #009933;
+    position: relative;
+}
+
+.btn::before,
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: inherit;
+    transition: all .5s;
+}
+
+.btn::before {
+    top: -15px;
+    left: -15px;
+    border-width: 3px 0 0 3px;
+}
+
+.btn::after {
+    bottom: -15px;
+    right: -15px;
+    border-width: 0 3px 3px 0;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+    width: calc(100% + 27px);
+    height: calc(100% + 27px);
+}
