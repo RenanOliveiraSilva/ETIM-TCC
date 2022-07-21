@@ -23,6 +23,7 @@
 	
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastroService->inserir();
+        header("location: ../tcc/index.php");
     }
 
 

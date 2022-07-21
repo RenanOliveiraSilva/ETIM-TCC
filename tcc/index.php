@@ -1,11 +1,11 @@
-<?php 
+<?php
+
   session_start();
   if(!isset($_SESSION["username"])) {
     header('location: ../login/login.php');
   }
 
 ?> 
-
 
 <!DOCTYPE html>
 
@@ -22,14 +22,7 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-      <link rel="stylesheet" href="index_tcc.css">
-
-      <style>
-
-        
-
-        </style>
-
+      <link rel="stylesheet" href="css/index_tcc.css">
 
     </head>
     
@@ -37,64 +30,62 @@
 
         <?php
             require_once 'navtcc.php';
-        ?>
 
+        ?>
+          
               <div class="row">
                 <div class="col s12 m4 l3 barra"> 
                   <ul class="collapsible " data-collapsible="accordion">
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Cadastro da plantação</font></div>
                       <div class="collapsible-body"><span><font size="4">Clique aqui para fazer <br> seu cadastro da plantação.</font></span>
-                      <a class="btn right " href="cad_plant.php">button</a>
+                      <a class="btn right " href="index.php?link=2"></a>
                     </div>
                     </li>
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Gestão de gastos</font></div>
                       <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> sua gestão de gastos.</font></span>
-                      <a class="btn right">button</a>
+                      <a class="btn right" href="index.php?link=2"></a>
                     </div>
                     </li>
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Previsão para a colheita</font></div>
                       <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> a previsão para a colheita.</font></span>
-                      <a class="btn right">button</a>
+                      <a class="btn right" href="index.php?link=2"></a>
                     </div>
                     </li>
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Tabela de lucros</font></div>
                       <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> a tabela de lucros.</font></span>
-                      <a class="btn right">button</a>
+                      <a class="btn right" href="index.php?link=2"></a>
                     </div>
                     </li>
                   </ul>
                 </div>
+
                 <div class="col s12 m8 l9">
-                <div class="slider">
-                  <ul class="slides">
-                    <li>
-                      <img src="../imagem/cadastro.jpg"> <!-- random image -->
-                    </li>
-                    <li>
-                      <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
-                      <div class="caption left-align">
-                        <h3>Left Aligned Caption</h3>
-                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
-                      <div class="caption right-align">
-                        <h3>Right Aligned Caption</h3>
-                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
-                    </li>
-                  </ul>
-                </div>
+
+                  <?php
+
+                    $link = @$_GET['link'];
+                    $pag[1]='principal.php';
+                    $pag[2]='cad_plant.php';
+                    $pag[3]='gestao.php';
+                    $pag[4]='previsao.php';
+                    $pag[5]='lucros.php';
+                    
+                    if(!empty($link)) {
+                      if (file_exists($pag[$link])) {
+                        include $pag[$link];
+                      }
+                    } else {
+                      trim(include "principal.php");
+                    }
+                  
+                  ?>
+
                  </div>
-            </div>
+              </div>
 
 
 
