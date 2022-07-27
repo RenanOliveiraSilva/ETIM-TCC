@@ -24,6 +24,10 @@
 
       <link rel="stylesheet" href="css/index_tcc.css">
 
+      <style>
+
+      </style>
+
     </head>
     
     <body background = "../imagem/terra.webp">
@@ -63,26 +67,27 @@
                   </ul>
                 </div>
 
-                <div class="col s12 m8 l9">
+                <div class="col s12 m8 l9 white">
 
-                  <?php
+                    <?php
 
-                    $link = @$_GET['link'];
-                    $pag[1]='principal.php';
-                    $pag[2]='cad_plant.php';
-                    $pag[3]='gestao.php';
-                    $pag[4]='previsao.php';
-                    $pag[5]='lucros.php';
-                    
-                    if(!empty($link)) {
-                      if (file_exists($pag[$link])) {
-                        include $pag[$link];
+                      $link = @$_GET['link'];
+                      $pag[1]='principal.php';
+                      $pag[2]='cad_plant.php';
+                      $pag[3]='gestao.php';
+                      $pag[4]='previsao.php';
+                      $pag[5]='lucros.php';
+                      
+                      if(!empty($link)) {
+                        if (file_exists($pag[$link])) {
+                          include $pag[$link];
+                        }
+                      } else {
+                        trim(include "principal.php");
                       }
-                    } else {
-                      trim(include "principal.php");
-                    }
-                  
-                  ?>
+                    
+                    ?>
+
 
                  </div>
               </div>
