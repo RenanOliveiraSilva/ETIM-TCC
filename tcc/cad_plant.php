@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <link rel="stylesheet" href="css/cad_plantcss.css">
+     <link rel="stylesheet" href="css/cad_plantcss.css"> 
     
     <script src="cad_script.js" defer></script>
     
     <title>Private Agro</title>
+
+    <style>
+
+
+.barra {
+    font-family: "light italic";
+}
+    </style>
     </head>
+
+    
 
   <body>
 

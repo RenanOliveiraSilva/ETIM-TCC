@@ -26,6 +26,10 @@
 
       <style>
 
+        .barra{
+          font-family: "light italic";
+        }
+
       </style>
 
     </head>
@@ -49,7 +53,7 @@
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Gestão de gastos</font></div>
                       <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> sua gestão de gastos.</font></span>
-                      <a class="btn right" href="index.php?link=2"></a>
+                      <a class="btn right" href="index.php?link=3"></a>
                     </div>
                     </li>
                     <li class="li">
@@ -77,6 +81,7 @@
                       $pag[3]='gestao.php';
                       $pag[4]='previsao.php';
                       $pag[5]='lucros.php';
+                      $pag[6]='tarifa.php';
                       
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {
