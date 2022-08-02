@@ -3,7 +3,7 @@
     require_once '../model/cadastro.model.php'; 
     require_once '../service/cadastro.service.php'; 
 
-    $acaoCad = "inserir";
+    @$acaoCad = isset($_GET['acaoCad'])?$_GET['acaoCad']:$acaoCad;
 
     if ($acaoCad == "inserir") 
     {
@@ -17,7 +17,7 @@
         $cadastro->__set('tipo',$_POST['tipo']);
         $cadastro->__set('qtdPlantada',$_POST['qtdPlantada']);
         $cadastro->__set('tempo',$_POST['tempo']);
-        $cadastro->__set('tamanho',$_POST['tamanho']);
+        $cadastro->__set('irrigacao',$_POST['irrigacao']);
         
         $conexao = new Conexao();
 	

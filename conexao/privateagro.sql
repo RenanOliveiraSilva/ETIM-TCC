@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Jun-2022 às 18:24
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 03-Ago-2022 às 01:46
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,16 +34,22 @@ CREATE TABLE `cadastro` (
   `tipo` varchar(25) NOT NULL,
   `qtdPlantada` int(11) NOT NULL,
   `tempo` int(11) NOT NULL,
-  `tamanho` int(11) NOT NULL,
-  `correcao` varchar(5) DEFAULT 'Sim'
+  `data_plantada` date NOT NULL DEFAULT current_timestamp(),
+  `data_colheita` date DEFAULT NULL,
+  `irrigacao` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `cadastro`
 --
 
-INSERT INTO `cadastro` (`id`, `id_users`, `nomePlanta`, `tipo`, `qtdPlantada`, `tempo`, `tamanho`, `correcao`) VALUES
-(1, 5, 'Alface', 'Semente', 500, 250, 500, 'Não');
+INSERT INTO `cadastro` (`id`, `id_users`, `nomePlanta`, `tipo`, `qtdPlantada`, `tempo`, `data_plantada`, `data_colheita`, `irrigacao`) VALUES
+(1, 5, 'Alface', 'Semente', 500, 250, '2022-06-18', NULL, 500),
+(2, 1, 'milho', 'semente', 100, 150, '2022-06-18', NULL, 200),
+(3, 1, 'milho', 'Semente', 100, 150, '2022-06-18', NULL, 100),
+(4, 3, 'Pimenta', 'Muda', 100, 250, '2022-06-18', NULL, 100),
+(5, 2, 'Soja', 'Semente', 100, 300, '2022-06-18', NULL, 100),
+(13, 2, 'Teste', 'Teste', 123, 52, '2022-07-31', NULL, 122);
 
 -- --------------------------------------------------------
 
@@ -55,18 +61,18 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
+  `data` datetime DEFAULT current_timestamp(),
+  `tarifa` double(4,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(2, 'Renan', '$2y$10$r9ryIDZGcrxp7fKlyAY5X.u0L2uhis.Bcv57nv02x7HdKM63cyUO6', '2022-04-14 12:50:54'),
-(3, 'Pedro', '$2y$10$ny3twI.nXGckFukPG4W00eTrkBtbxu/HqR.oczMjEq6NUPMgegec6', '2022-04-14 12:52:27'),
-(4, 'Amanda', '$2y$10$/sCG.jBAasV05g5nAL/48eErzhxRZe70l9/rL6IDyczJX.LdEvHli', '2022-04-14 13:25:20'),
-(5, 'Vitoria', '$2y$10$H.BoVmGFfYJYpg1NgxkoCOfLgIZ7fDEK35dvc1QZ//3S/5UqQ3s.G', '2022-06-08 13:02:18');
+INSERT INTO `users` (`id`, `username`, `password`, `data`, `tarifa`) VALUES
+(1, 'Renan', '$2y$10$KiFqIoeoyEj66XNRAOiIVeMKunxqS7bYoIfvz5KccZtKbAtR0OiLO', '2022-03-18 21:11:36', 58.00),
+(2, 'Marcos', '$2y$10$dmTyL9WdkFi1nOfaaorEYucv9hr14sRzX9aiDHfUIxhwPZdAZZ1Qe', '2022-03-20 17:20:12', NULL),
+(3, 'Pedro', '$2y$10$su.J5k5GZAELzmcOQ39fxe0RCC3sMdVLLhPDlWF/EGpvSouMKnFES', '2022-06-17 22:04:11', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -76,8 +82,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
 -- Índices para tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_users` (`id_users`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `users`
@@ -94,23 +99,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Restrições para despejos de tabelas
---
-
---
--- Limitadores para a tabela `cadastro`
---
-ALTER TABLE `cadastro`
-  ADD CONSTRAINT `cadastro_ibfk_1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

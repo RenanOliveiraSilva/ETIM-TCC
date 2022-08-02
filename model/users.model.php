@@ -1,9 +1,11 @@
 <?php
 
-    class tarifa {
+    class Users {
         private $id;
-        private $id_users;
-        private $valor_tarifa;
+        private $username;
+        private $password;
+        private $data;
+        private $tarifa;
 
 
         public function __set($atributo, $valor) {

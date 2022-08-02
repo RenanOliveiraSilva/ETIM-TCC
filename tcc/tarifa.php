@@ -1,6 +1,8 @@
 <?php
 
-echo "Teste";
+    $açãoTar = "inserir";
+    include_once "tarifa_form.php";
+
 
 
 ?>

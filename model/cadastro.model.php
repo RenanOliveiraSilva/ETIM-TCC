@@ -9,7 +9,7 @@
         private $tempo;
         private $data_plantada;
         private $data_colheita;
-        private $tamanho;
+        private $irrigacao;
         
         public function __set($atributo,$valor){
             $this->$atributo = $valor;

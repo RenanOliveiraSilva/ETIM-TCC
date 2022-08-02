@@ -11,7 +11,7 @@
 
         public function inserir()
         {
-            $query = "insert into cadastro (id_users, nomePlanta, tipo, qtdPlantada, tempo, tamanho) values (:id_users, :nomePlanta, :tipo, :qtdPlantada, :tempo, :tamanho)";
+            $query = "insert into cadastro (id_users, nomePlanta, tipo, qtdPlantada, tempo, irrigacao) values (:id_users, :nomePlanta, :tipo, :qtdPlantada, :tempo, :irrigacao)";
         
             $stmt = $this->conexao->prepare($query);
 
@@ -20,13 +20,13 @@
             $stmt->bindValue('tipo', $this->cadastro->__get('tipo'));
             $stmt->bindValue('qtdPlantada', $this->cadastro->__get('qtdPlantada'));
             $stmt->bindValue('tempo', $this->cadastro->__get('tempo'));
-            $stmt->bindValue('tamanho', $this->cadastro->__get('tamanho'));
+            $stmt->bindValue('irrigacao', $this->cadastro->__get('irrigacao'));
 
             $stmt->execute();
 
         }
 
-        public function recuperar() 
+        public function recuperar($id_users) 
         {
            $query = "select * from cadastro where id_users = :id_users";
             

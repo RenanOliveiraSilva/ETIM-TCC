@@ -71,17 +71,15 @@
                   </ul>
                 </div>
 
-                <div class="col s12 m8 l9 white">
+                <div class="col s12 m8 l9 content">
 
                     <?php
 
                       $link = @$_GET['link'];
                       $pag[1]='principal.php';
-                      $pag[2]='cad_plant.php';
+                      $pag[2]='cadastro_form.php';
                       $pag[3]='gestao.php';
-                      $pag[4]='previsao.php';
-                      $pag[5]='lucros.php';
-                      $pag[6]='tarifa.php';
+                      $pag[4]='tarifa.php';
                       
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {
