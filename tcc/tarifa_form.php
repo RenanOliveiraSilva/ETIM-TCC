@@ -1,5 +1,6 @@
 <?php
 require_once "../controller/users.controller.php";
+$açãoTar = "inserir";
 
 ?>
 <form class="col l12 m12 s12" action="users.controller.php?acaoTar=<?php if(!isset($metodo)){echo 'inserir';}elseif($metodo=='alterar'){echo 'alterar';}else{echo 'remover';}?>" method="post">
