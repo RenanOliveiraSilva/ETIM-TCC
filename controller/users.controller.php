@@ -5,10 +5,7 @@
     require_once '../service/users.service.php'; 
 
     @$acaoTar = isset($_GET['acaoTar'])?$_GET['acaoTar']:$acaoTar;
-
-
-
-    
+ 
     if ($acaoTar == "inserir") 
     {
         session_start();  
@@ -21,12 +18,13 @@
         $conexao = new Conexao;
         $usersService = new UsersService($users, $conexao);
         $usersService->inserir($id_users);
-        header("location: ../tcc/index.php");
+        header("location: index.php?link=3");
 
-    } elseif ($acaoTar == "recuperar") {
+    } elseif ($acaoTar == "") {
         $users = new Users();
         $conexao = new Conexao();
-        echo "recuperar";
+        $id_users = $_SESSION['id'];
+        
         $usersService = new UsersService($users, $conexao);
         $users = $usersService->recuperar($id_users);
     }

@@ -24,7 +24,16 @@
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastroService->inserir();
         header("location: ../tcc/index.php");
-    } 
+
+    } else
+    {
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+        $id_users = $_SESSION['id'];
+        
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastro = $cadastroService->recuperar($id_users);
+    }
 
 
 

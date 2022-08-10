@@ -30,9 +30,7 @@
             $stmt = $this->conexao->prepare($query);
             
             $stmt->bindValue('id', $id_users);
-
             $stmt->execute();
-
             return $stmt->fetchALL(PDO::FETCH_OBJ);
         }
 

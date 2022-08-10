@@ -29,10 +29,26 @@
         public function recuperar($id_users) 
         {
            $query = "select * from cadastro where id_users = :id_users";
-            
+
            $stmt = $this->conexao->prepare($query);
+           $stmt->bindValue('id_users', $id_users);
            $stmt->execute();
            return $stmt->fetchALL(PDO::FETCH_OBJ);
+            
+           $retorno = [];
+
+           foreach ($stmt as $registro)
+           { 
+                array_push($retorno, 
+                new CadastroService ($stmt["id"], $stmt["id_users"], $stmt["nomePlanta"], $stmt["tipo"], 
+                                    $stmt["qtdPlantada"], $stmt["tempo"], $stmt["data_plantada"], $stmt["data_colheita"], $stmt["irrigacao"])
+                        );
+                        return $retorno;
+           };
+
+
+       
+
 
         }
 

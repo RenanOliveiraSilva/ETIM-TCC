@@ -10,28 +10,62 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <style>
-            html,body{
-                background:#4d2619; 
-            }
+           
             nav{
             background:#753F2D;
             font-family: "light italic";
             color: #ffffff;
           }
+
+          p{
+            font-size: 30px;
+            text-align: center;
+            padding: 80px;
+            margin: 30px;
+            font-family: "light italic";
+            color: #ffffff;
+          }
+
+         center{
+           align-items: center;
+         }
         </style>
 
     </head>
-    <body >
+    <body background="imagem/terra.webp">
     <nav>
     <div class="nav-wrapper">
       <a  class="brand-logo "><font size="7">PrivateAgro</font></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down ">
-        <li><a href="../ETTIM-TCC/index.php"><font size="5">Voltar ao início</font></a></li>
+        <li><a href="../ETIM-TCC/index.php"><font size="5">Voltar ao início</font></a></li>
       </ul>
     </div>
   </nav>
 
 
+
+     <center>   
+  
+        
+        <p>O trabalho na área da agricultura pode ser desgastante na maioria das vezes, <br>
+    portanto a criação de um sistema que gerencie as informações<br>
+     trará uma comodidade ao proprietário. 
+     <br>
+     <br>
+     A organização de uma plantação pode ser o maior desafio para o agricultor,<br>
+      desde definir a data da colheita até o tipo da planta.<br>
+       Por isso a criação de um site para esse fim pode ser inovadora para o mercado.  
+       <br>
+       <br>
+       O Private Agro nasceu com esse propósito, <br>
+       cadastrar informações como data do plantio, <br>
+       data prevista para a colheita e gastos. <br>
+       Além disso, o site conta com uma função para consulta,<br>
+        onde o agricultor possa verificar os dados cadastrados de maneira prática.<br>
+        Dessa forma o site fará uma estatística automática para controle de gastos.  </p>
+        
+  
+     </center>
     </body>
 
       <!--Import jQuery before materialize.js-->
