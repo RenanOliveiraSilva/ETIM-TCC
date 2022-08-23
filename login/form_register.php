@@ -19,7 +19,7 @@
         <section class="login">
 
           <div class="close">
-            <a href="http://localhost/3etimds2022/ETIM-TCC/">
+            <a href="../index.php">
             <button type="submit" class = "close__button">
 
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

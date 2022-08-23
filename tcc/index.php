@@ -26,9 +26,7 @@
 
       <style>
 
-        .barra{
-          font-family: "light italic";
-        }
+
 
       </style>
 
@@ -53,7 +51,7 @@
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Gestão de gastos</font></div>
                       <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> sua gestão de gastos.</font></span>
-                      <a class="btn right" href="index.php?link=3"></a>
+                      <a class="btn right" href="index.php?link=3&acaoCad=recuperar"></a>
                     </div>
                     </li>
                     <li class="li">
@@ -80,6 +78,8 @@
                       $pag[2]='cadastro_form.php';
                       $pag[3]='gestao.php';
                       $pag[4]='tarifa.php';
+                      $pag[5]='gestao_plantacao.php';
+                      $pag[6]='tarifa_form.php';
                       
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {
@@ -108,7 +108,7 @@
                 $('.collapsible').collapsible();
                 });
 
-                $(document).ready(function(){
+/*                 $(document).ready(function(){
                     $('.slider').slider();
                   });
 
@@ -119,7 +119,12 @@
                 // Next slide
                 $('.slider').slider('next');
                 // Previous slide
-                $('.slider').slider('prev');
+                $('.slider').slider('prev'); */
+
+                $('.fixed-action-btn').openFAB();
+                $('.fixed-action-btn').closeFAB();
+                $('.fixed-action-btn.toolbar').openToolbar();
+                $('.fixed-action-btn.toolbar').closeToolbar();
                 
             </script>
 

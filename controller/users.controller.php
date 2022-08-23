@@ -12,13 +12,18 @@
         $id_users = $_SESSION['id'];
 
         $users = new Users();
-        $users->__set('tarifa',$_POST['tarifa']);
+
+        $tarifa = $_POST['tarifa'];
+        $tarifa = $tarifa / 1000;
+
+        $users->__set('tarifa',$tarifa);
 
   
         $conexao = new Conexao;
         $usersService = new UsersService($users, $conexao);
         $usersService->inserir($id_users);
-        header("location: index.php?link=3");
+        echo $tarifa;
+        header("location: index.php?link=3&acaoCad=recuperar");
 
     } elseif ($acaoTar == "") {
         $users = new Users();

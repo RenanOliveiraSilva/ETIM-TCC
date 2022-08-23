@@ -4,6 +4,9 @@
     require_once '../service/cadastro.service.php'; 
 
     @$acaoCad = isset($_GET['acaoCad'])?$_GET['acaoCad']:$acaoCad;
+    @$id = $_GET['id'];
+
+    //$acaoCad = "recuperarPlantacao";
 
     if ($acaoCad == "inserir") 
     {
@@ -20,12 +23,30 @@
         $cadastro->__set('irrigacao',$_POST['irrigacao']);
         
         $conexao = new Conexao();
-	
+
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastroService->inserir();
         header("location: ../tcc/index.php");
 
-    } else
+    } elseif ($acaoCad == "recuperarPlantacao")
+    {
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+        
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastro = $cadastroService->recuperarPlantacao($id);
+
+
+    } elseif ($acaoCad == "excluir") 
+    {
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastro = $cadastroService->excluir($id);
+        header("location: ../tcc/index.php?link=3&acaoCad=recuperar");
+
+    } elseif ($acaoCad == "recuperar")
     {
         $cadastro = new Cadastro();
         $conexao = new Conexao();

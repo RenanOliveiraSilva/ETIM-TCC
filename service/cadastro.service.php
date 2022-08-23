@@ -34,24 +34,27 @@
            $stmt->bindValue('id_users', $id_users);
            $stmt->execute();
            return $stmt->fetchALL(PDO::FETCH_OBJ);
-            
-           $retorno = [];
-
-           foreach ($stmt as $registro)
-           { 
-                array_push($retorno, 
-                new CadastroService ($stmt["id"], $stmt["id_users"], $stmt["nomePlanta"], $stmt["tipo"], 
-                                    $stmt["qtdPlantada"], $stmt["tempo"], $stmt["data_plantada"], $stmt["data_colheita"], $stmt["irrigacao"])
-                        );
-                        return $retorno;
-           };
-
-
-       
-
 
         }
 
+        public function recuperarPlantacao($id) 
+        {
+            $query = "SELECT * FROM cadastro WHERE id = :id";
+
+            $stmt = $this->conexao->prepare($query);
+            $stmt->bindValue('id', $id);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+            
+        }
+        public function excluir($id)
+        {
+            $query = "DELETE FROM `cadastro` WHERE id = :id";
+
+            $stmt = $this->conexao->prepare($query);
+            $stmt->BindValue('id', $id);
+            $stmt->execute();
+        }
     }
 
 

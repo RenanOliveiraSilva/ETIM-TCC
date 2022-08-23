@@ -1,6 +1,5 @@
 <?php
 require_once "../controller/users.controller.php";
-//$açãoTar = "inserir";
 
 ?>
 <form class="col l12 m12 s12" action="users.controller.php?acaoTar=<?php if(!isset($metodo)){echo 'inserir';}elseif($metodo=='alterar'){echo 'alterar';}else{echo 'remover';}?>" method="post">
@@ -9,7 +8,7 @@ require_once "../controller/users.controller.php";
   </div>
   <div class="row">
     <div class="input-field col l12 m12 s12">
-      <input id="tarifa" name="tarifa" type="number" class="validate" value="<?php if(isset($tarifa)){echo $tarifa;}else{echo '';}?>">
+      <input id="tarifa" name="tarifa" type="text" class="validate" value="<?php if(isset($tarifa)){echo $tarifa;}else{echo '';}?>" required="">
       <label for="tarifa">Valor da Tarifa</label>
     </div>
   </div>
