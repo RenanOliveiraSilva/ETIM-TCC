@@ -43,7 +43,7 @@
         $conexao = new Conexao();
 
         $cadastroService = new CadastroService($cadastro, $conexao);
-        $cadastro = $cadastroService->excluir($id);
+        $cadastroService->excluir($id);
         header("location: ../tcc/index.php?link=3&acaoCad=recuperar");
 
     } elseif ($acaoCad == "recuperar")
@@ -54,8 +54,23 @@
         
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastro = $cadastroService->recuperar($id_users);
+
+    } elseif ($acaoCad == "inserirGastos") {
+
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+
+        $cadastro->__set('id',$id);
+        $cadastro->__set('p_irrigacao',$_POST['p_irrigacao']);
+        $cadastro->__set('p_tipo',$_POST['p_tipo']);
+        $cadastro->__set('p_fertilizante',$_POST['p_fertilizante']);
+
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastro = $cadastroService->inserirGastos($id);
+        header("location: index.php?link=5&id=$id&acaoCad=recuperarPlantacao");
     }
 
 
 
 ?>
+

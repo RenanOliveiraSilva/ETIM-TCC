@@ -10,6 +10,10 @@
         private $data_plantada;
         private $data_colheita;
         private $irrigacao;
+        private $p_irrigacao;
+        private $p_tipo;
+        private $p_fertilizante;
+        private $gastos;
         
         public function __set($atributo,$valor){
             $this->$atributo = $valor;

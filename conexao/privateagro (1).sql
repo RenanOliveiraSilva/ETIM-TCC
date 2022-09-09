@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Ago-2022 às 18:26
+-- Tempo de geração: 08-Set-2022 às 19:18
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -37,21 +37,23 @@ CREATE TABLE `cadastro` (
   `data_plantada` date NOT NULL DEFAULT current_timestamp(),
   `data_colheita` date DEFAULT NULL,
   `irrigacao` int(11) NOT NULL,
-  `Gasto` double(5,2) DEFAULT NULL
+  `p_irrigacao` decimal(6,2) DEFAULT NULL,
+  `p_tipo` decimal(6,2) DEFAULT NULL,
+  `p_fertilizante` decimal(6,2) DEFAULT NULL,
+  `gastos` decimal(6,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `cadastro`
 --
 
-INSERT INTO `cadastro` (`id`, `id_users`, `nomePlanta`, `tipo`, `qtdPlantada`, `tempo`, `data_plantada`, `data_colheita`, `irrigacao`, `Gasto`) VALUES
-(1, 5, 'Alface', 'Semente', 500, 250, '2022-06-18', NULL, 500, NULL),
-(2, 1, 'Couve', 'Semente', 100, 150, '2022-06-18', NULL, 200, NULL),
-(3, 1, 'milho', 'Semente', 100, 150, '2022-06-18', NULL, 100, NULL),
-(4, 3, 'Pimenta', 'Muda', 100, 250, '2022-06-18', NULL, 100, NULL),
-(5, 2, 'Soja', 'Semente', 100, 300, '2022-06-18', NULL, 100, NULL),
-(13, 2, 'Teste', 'Teste', 123, 52, '2022-07-31', NULL, 122, NULL),
-(14, 2, 'teste', 'teste', 0, 123, '2022-08-03', NULL, 210, NULL);
+INSERT INTO `cadastro` (`id`, `id_users`, `nomePlanta`, `tipo`, `qtdPlantada`, `tempo`, `data_plantada`, `data_colheita`, `irrigacao`, `p_irrigacao`, `p_tipo`, `p_fertilizante`, `gastos`) VALUES
+(1, 5, 'Alface', 'Semente', 500, 250, '2022-06-18', NULL, 500, NULL, NULL, NULL, NULL),
+(4, 3, 'Pimenta', 'Muda', 100, 250, '2022-06-18', NULL, 100, NULL, NULL, NULL, NULL),
+(5, 2, 'Soja', 'Semente', 100, 300, '2022-06-18', NULL, 100, NULL, NULL, NULL, NULL),
+(13, 2, 'Teste', 'Teste', 123, 52, '2022-07-31', NULL, 122, NULL, NULL, NULL, NULL),
+(14, 2, 'teste', 'teste', 0, 123, '2022-08-03', NULL, 210, NULL, NULL, NULL, NULL),
+(27, 1, 'Teste2', 'teste2', 123, 213, '2022-09-08', NULL, 123, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -101,7 +103,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `users`

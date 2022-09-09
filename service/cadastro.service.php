@@ -55,6 +55,18 @@
             $stmt->BindValue('id', $id);
             $stmt->execute();
         }
+        public function inserirGastos($id)
+        {
+            $query = "UPDATE cadastro SET p_irrigacao = :p_irrigacao, p_tipo = :p_tipo, p_fertilizante =  :p_fertilizante WHERE id=:id";
+
+            $stmt = $this->conexao->prepare($query);
+            $stmt->BindValue('p_irrigacao', $this->cadastro->__get('p_irrigacao'));
+            $stmt->BindValue('p_tipo', $this->cadastro->__get('p_tipo'));
+            $stmt->BindValue('p_fertilizante', $this->cadastro->__get('p_fertilizante'));
+            $stmt->BindValue('id', $id);
+            $stmt->execute();
+            
+        }
     }
 
 

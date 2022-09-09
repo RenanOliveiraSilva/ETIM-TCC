@@ -2,7 +2,7 @@
 
     require_once "../controller/users.controller.php";
     require_once "../controller/cadastro.controller.php";
-    $i = 0;
+
     @$acao = $_GET['acao'];
 
     foreach ($users as $users)
@@ -14,17 +14,13 @@
         $tarifa=$users->tarifa;
     }
 
-    $ids = [];
-    $plantacoes = [];
-    $data = [];
+    $popUp = "sucesso";
 
-    foreach($cadastro as $indice => $cadastro)
-    {
-      array_push($ids, $cadastro->id);
-      array_push($plantacoes, $cadastro->nomePlanta);
-      array_push($data, $cadastro->data_plantada);
+    if (isset($popUp)) {
+      if ($popUp == "sucesso") {
+        ?> <a onload="M.toast({html: 'I am a toast'})" class="hidden"></a> <?php
+      }
     }
-    
 
     if (empty($tarifa)) 
     {
@@ -32,6 +28,7 @@
         ';
         
         include_once "tarifa_form.php";
+        
     } else {
 
 ?>
@@ -47,50 +44,38 @@
       </thead>
 
       <tbody>
-      <?php foreach ($plantacoes as $index => $valor) {
-
-        if ($acao == "excluir") 
-        { 
-          echo "<tr>".
-          "<td>".$valor."</td>".
-          "<td>".$data[$i]."</td>".
-          "<td>".'<a class="waves-effect waves-light btn"  href="../controller/cadastro.controller.php?&id='.$ids[$i].'&acaoCad=excluir"><i class="large material-icons excluir">delete</i></a>'."</td>"
-          ."</tr>";
-          $i++;
-        } else 
-        {
-          echo "<tr>".
-          "<td>".$valor."</td>".
-          "<td>".$data[$i]."</td>".
-          "<td>".'<a class="waves-effect waves-light btn"  href="index.php?link=5&id='.$ids[$i].'&acaoCad=recuperarPlantacao"><i class="large material-icons">check</i></a>'."</td>"
-          ."</tr>";
-          $i++;
-        }
-
-
-
-      }
-      ?>
+        <?php
+            if ($acao == "excluir")
+            {
+              foreach ($cadastro as $cadastro) {
+              echo "<tr>".
+                "<td>".$cadastro->nomePlanta."</td>".
+                "<td>".$cadastro->data_plantada."</td>".
+                "<td>".'<a class="waves-effect waves-light btn" id="cor"  href="confirmar.php?id='.$cadastro->id.'"><i class="large material-icons excluir">delete</i></a>'."</td>"
+              ."</tr>";  
+              }
+            } else 
+            {
+              foreach ($cadastro as $cadastro) {
+                echo "<tr>".
+                 "<td>".$cadastro->nomePlanta."</td>".
+                 "<td>".$cadastro->data_plantada."</td>".
+                 "<td>".'<a class="waves-effect waves-light btn"  href="index.php?link=5&id='.$cadastro->id.'&acaoCad=recuperarPlantacao"><i class="large material-icons">check</i></a>'."</td>"
+               ."</tr>";  
+               }
+            }
+        
+        ?>
+      
       </tbody>
     </table>
     <hr>
-    <div class="fixed-action-btn horizontal click-to-toggle">
-    <a class="btn-floating btn-large red">
-      <i class="material-icons">menu</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red" href="index.php?link=3&acao=excluir&acaoCad=recuperar"><i class="material-icons">delete</i></a></li>
-      <li><a class="btn-floating yellow darken-1" href="index.php?link=6"><i class="material-icons">border_color</i></a></li>
-    </ul>
-  </div>
-  </div>
-
-  <script type="text/javascript"> 
-       document.querySelectorAll(".excluir").forEach( (botao)=>{  
-            botao.addEventListener('click',(e)=>{
-                confirm("Confirma a exclusão do Plantação? ");
-            });
-        });
-  </script>
-
+    <?php if ($acao == "excluir") echo'<a class="waves-effect waves-light btn"  href="index.php?link=3&acaoCad=recuperar"><i class="large material-icons">search</i>Consultar</a>';
+          else echo'<a class="waves-effect waves-light btn" id="cor"  href="index.php?link=3&acaoCad=recuperar&acao=excluir"><i class="large material-icons">delete</i>Excluir</a>';
+    ?>
+      <a class="waves-effect waves-light btn" id="alt" href="index.php?link=3&acaoCad=excluir"><i class="large material-icons">edit</i>Alterar</a><br>
+    <hr>
+ 
 <?php } ?>
+
+
