@@ -46,7 +46,7 @@
         <?php     
         
           if (!isset($p_irrigacao)) { 
-?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>">Inserir</a>
+?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>&acaoCad=recuperarPlantacao">Inserir</a>
             <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>">Alterar</a> <?php
           } else {
 ?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>">Alterar</a> <?php

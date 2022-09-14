@@ -1,5 +1,30 @@
-<?php $id = $_GET['id']; ?>
-<form class="col l12 m12 s12" action="cadastro.controller.php?acaoCad=inserirGastos&id=<?php echo $id; ?>" method="post">
+<?php
+
+  require_once "../controller/users.controller.php";
+  require_once "../controller/cadastro.controller.php";
+
+  $id = $_GET['id'];
+
+  foreach ($users as $users)
+  {
+      $id=$users->id;
+      $username=$users->username;
+      $password=$users->password;
+      $data=$users->data;
+      $tarifa=$users->tarifa;
+  }
+
+  foreach ($cadastro as $cadastro)
+  {
+    $id=$cadastro->id;   
+    $qtdPlantada=$cadastro->qtdPlantada; 
+    $tempo=$cadastro->tempo; 
+    $irrigacao=$cadastro->irrigacao;
+  }
+
+?>
+<form class="col l12 m12 s12" action="cadastro.controller.php?acaoCad=inserirGastos&id=<?php echo $id;?>&tarifa=<?php echo $tarifa;?>
+  &qtdplantada=<?php echo $qtdPlantada;?>&tempo=<?php echo $tempo;?>&irrigacao=<?php echo $irrigacao;?>" method="post">
   <div class="row">
     <blockquote><h4>Cadastro de Gastos</h4> </blockquote>
   </div>
