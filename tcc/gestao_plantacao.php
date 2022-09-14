@@ -44,12 +44,13 @@
         <h6>Quantidade de Irrigações por Dia: <?php echo $irrigacao;?></h6>
 
         <?php     
-        
+
+
           if (!isset($p_irrigacao)) { 
 ?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>&acaoCad=recuperarPlantacao">Inserir</a>
-            <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>">Alterar</a> <?php
+            <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>&acaoCad=recuperarPlantacao">Alterar</a> <?php
           } else {
-?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>">Alterar</a> <?php
+?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>&acaoCad=recuperarPlantacao">Alterar</a> <?php
           }
 
         ?>
@@ -72,22 +73,22 @@
             <tr>
               <td>Irrigações</td>
               <td></td>
-              <td>Teste</td>
+              <td><?php echo $p_irrigacao;?></td>
             </tr>
             <tr>
               <td><?php echo $tipo;?></td>
               <td></td>
-              <td>Teste</td>
+              <td><?php echo $p_tipo;?></td>
             </tr>
             <tr>
               <td>Fertilizantes</td>
               <td></td>
-              <td>Teste</td>
+              <td><?php echo $p_fertilizante;?></td>
             </tr>
           </tbody>
         </table>
         <hr>
-        <h5 class='red-text text-accent-4'>Total Gasto: Não Definido</h5>
+        <h5 class='red-text text-accent-4'>Total Gasto: <?php echo $gastos; ?></h5>
       </div>
       </div><?php
       } else
@@ -122,6 +123,8 @@
         </table>
         <hr>
         <h5 class='red-text text-accent-4'>Total Gasto: Não Definido</h5>
+
+        
       </div> <?php
       }
     ?>

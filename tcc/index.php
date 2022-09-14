@@ -147,6 +147,13 @@ li.li {
   
   }
 
+  .vazio {
+
+    background-color: #fff;
+    height: 200px;
+
+  }
+
       </style>
 
     </head>

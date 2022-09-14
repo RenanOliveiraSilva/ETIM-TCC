@@ -18,7 +18,7 @@
 
     if (isset($popUp)) {
       if ($popUp == "sucesso") {
-        ?> <a onload="M.toast({html: 'I am a toast'})" class="hidden"></a> <?php
+        ?> <a onload="M.toast({html: 'I am a toast'})"></a> <?php
       }
     }
 
@@ -45,25 +45,36 @@
 
       <tbody>
         <?php
-            if ($acao == "excluir")
-            {
-              foreach ($cadastro as $cadastro) {
-              echo "<tr>".
-                "<td>".$cadastro->nomePlanta."</td>".
-                "<td>".$cadastro->data_plantada."</td>".
-                "<td>".'<a class="waves-effect waves-light btn" id="cor"  href="confirmar.php?id='.$cadastro->id.'"><i class="large material-icons excluir">delete</i></a>'."</td>"
-              ."</tr>";  
-              }
-            } else 
-            {
-              foreach ($cadastro as $cadastro) {
+
+            if (!isset($cadastro->id)) {
+        
+              if ($acao == "excluir")
+              {
+                foreach ($cadastro as $cadastro) {
                 echo "<tr>".
-                 "<td>".$cadastro->nomePlanta."</td>".
-                 "<td>".$cadastro->data_plantada."</td>".
-                 "<td>".'<a class="waves-effect waves-light btn"  href="index.php?link=5&id='.$cadastro->id.'&acaoCad=recuperarPlantacao"><i class="large material-icons">check</i></a>'."</td>"
-               ."</tr>";  
-               }
+                  "<td>".$cadastro->nomePlanta."</td>".
+                  "<td>".$cadastro->data_plantada."</td>".
+                  "<td>".'<a class="waves-effect waves-light btn" id="cor"  href="confirmar.php?id='.$cadastro->id.'"><i class="large material-icons excluir">delete</i></a>'."</td>"
+                ."</tr>";  
+                }
+              } else 
+              {
+                foreach ($cadastro as $cadastro) {
+                  echo "<tr>".
+                  "<td>".$cadastro->nomePlanta."</td>".
+                  "<td>".$cadastro->data_plantada."</td>".
+                  "<td>".'<a class="waves-effect waves-light btn"  href="index.php?link=5&id='.$cadastro->id.'&acaoCad=recuperarPlantacao"><i class="large material-icons">check</i></a>'."</td>"
+                ."</tr>";  
+                }
+              }
+
+            } else {
+
+
+
             }
+
+
         
         ?>
       
@@ -73,7 +84,7 @@
     <?php if ($acao == "excluir") echo'<a class="waves-effect waves-light btn"  href="index.php?link=3&acaoCad=recuperar"><i class="large material-icons">search</i>Consultar</a>';
           else echo'<a class="waves-effect waves-light btn" id="cor"  href="index.php?link=3&acaoCad=recuperar&acao=excluir"><i class="large material-icons">delete</i>Excluir</a>';
     ?>
-      <a class="waves-effect waves-light btn" id="alt" href="index.php?link=3&acaoCad=excluir"><i class="large material-icons">edit</i>Alterar</a><br>
+      <a class="waves-effect waves-light btn" id="alt" href="index.php?link=6"><i class="large material-icons">edit</i>Alterar</a><br>
     <hr>
  
 <?php } ?>

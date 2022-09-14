@@ -65,19 +65,21 @@
         $tempo = $_GET['tempo'];
         $irrigacao = $_GET['irrigacao'];
         $tarifa = $_GET['tarifa'];
+        $p_tipo = $_POST['p_tipo'];
+        $fertilizante = $_POST['p_fertilizante'];
 
-        $gastos = 20;
+        $t_irrigacao = $tempo * ($p_irrigacao * $tarifa * $irrigacao);
 
         $cadastro->__set('id',$id);
-        $cadastro->__set('p_irrigacao',$_POST['p_irrigacao']);
-        $cadastro->__set('p_tipo',$_POST['p_tipo']);
-        $cadastro->__set('p_fertilizante',$_POST['p_fertilizante']);
+        $cadastro->__set('p_irrigacao',$t_irrigacao);
+        $cadastro->__set('p_tipo',$p_tipo);
+        $cadastro->__set('p_fertilizante',$fertilizante);
 
-        echo $tempo;
+        $gastos = $t_irrigacao + $t_tipo + $fertilizante;
 
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastro = $cadastroService->inserirGastos($id, $gastos);
-        //header("location: index.php?link=5&id=$id&acaoCad=recuperarPlantacao");
+        header("location: index.php?link=5&id=$id&acaoCad=recuperarPlantacao");
     }
 
 
