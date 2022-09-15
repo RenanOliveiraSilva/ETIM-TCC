@@ -76,7 +76,7 @@
               <td><?php echo $p_irrigacao;?></td>
             </tr>
             <tr>
-              <td><?php echo $tipo;?></td>
+              <td><?php if (strtolower($tipo) == "semente") echo "Sementes"; else echo "Mudas";?></td>
               <td></td>
               <td><?php echo $p_tipo;?></td>
             </tr>
@@ -110,7 +110,7 @@
               <td>-Não Inserido-</td>
             </tr>
             <tr>
-              <td><?php echo $tipo;?></td>
+            <td><?php if (strtolower($tipo) == "semente") echo "Sementes"; else echo "Mudas";?></td>
               <td></td>
               <td>-Não Inserido-</td>
             </tr>

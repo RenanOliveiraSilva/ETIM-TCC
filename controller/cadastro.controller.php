@@ -75,7 +75,7 @@
         $cadastro->__set('p_tipo',$p_tipo);
         $cadastro->__set('p_fertilizante',$fertilizante);
 
-        $gastos = $t_irrigacao + $t_tipo + $fertilizante;
+        $gastos = $t_irrigacao + $p_tipo + $fertilizante;
 
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastro = $cadastroService->inserirGastos($id, $gastos);

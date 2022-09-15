@@ -16,11 +16,13 @@
 
     $popUp = "sucesso";
 
+
     if (isset($popUp)) {
       if ($popUp == "sucesso") {
-        ?> <a onload="M.toast({html: 'I am a toast'})"></a> <?php
+        echo "<input type='button' onclick='Sucesso()'>";
       }
     }
+    
 
     if (empty($tarifa)) 
     {
@@ -32,6 +34,7 @@
     } else {
 
 ?>
+
     <div class="tabela">
       <blockquote><b><h4> <?php if ($acao=="") echo "Selecione "; else echo "Excluir "; ?>uma Plantação </h4></b></blockquote>
       <hr>
@@ -88,5 +91,13 @@
     <hr>
  
 <?php } ?>
+
+<script>
+
+function Sucesso() {
+    Materialize.toast('Exclusão Efetuada!', 4000);
+}
+
+</script>
 
 

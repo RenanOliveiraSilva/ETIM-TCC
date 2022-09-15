@@ -183,7 +183,7 @@ li.li {
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Previsão para a colheita</font></div>
                       <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> a previsão para a colheita.</font></span>
-                      <a class="btn right" href="index.php?link=2"></a>
+                      <a class="btn right" href="index.php?link=8"></a>
                     </div>
                     </li>
                     <li class="li">
@@ -207,6 +207,7 @@ li.li {
                       $pag[5]='gestao_plantacao.php';
                       $pag[6]='tarifa_form.php';
                       $pag[7]='gestao_form.php';
+                      $pag[8]='previsao.php';
                       
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {
@@ -253,8 +254,12 @@ li.li {
                 $('.fixed-action-btn.toolbar').openToolbar();
                 $('.fixed-action-btn.toolbar').closeToolbar();
 
+                $(document).ready(function(){
+                  $('.tooltipped').tooltip({delay: 50});
+                });
                 
-                
+
+
             </script>
 
 </html>
