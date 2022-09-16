@@ -80,6 +80,18 @@
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastro = $cadastroService->inserirGastos($id, $gastos);
         header("location: index.php?link=5&id=$id&acaoCad=recuperarPlantacao");
+
+    } elseif ($acaoCad == 'previsao') {
+
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+
+        $tempo = $_GET['tempo'];
+        $data_plantada = $_GET['data_plantada'];
+        
+        $cadastro->__set('data_colheita', $data_colheita);
+        
+
     }
 
 

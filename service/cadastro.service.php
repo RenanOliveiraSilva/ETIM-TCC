@@ -68,6 +68,12 @@
             $stmt->execute();
             
         }
+        public function data($tempo, $data_plantada) 
+        {
+            $query = "SELECT DATEADD ( DAY ,$tempo, $data_plantada)";
+
+
+        }
     }
 
 
