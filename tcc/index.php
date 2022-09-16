@@ -183,7 +183,7 @@ li.li {
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Previsão para a colheita</font></div>
                       <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> a previsão para a colheita.</font></span>
-                      <a class="btn right" href="index.php?link=8"></a>
+                      <a class="btn right" href="index.php?link=8&acaoCad=recuperar"></a>
                     </div>
                     </li>
                     <li class="li">
@@ -208,7 +208,8 @@ li.li {
                       $pag[6]='tarifa_form.php';
                       $pag[7]='gestao_form.php';
                       $pag[8]='previsao.php';
-                      
+                      $pag[9]='previsao_plantacao.php';
+
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {
                           include $pag[$link];
