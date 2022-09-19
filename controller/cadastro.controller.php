@@ -89,7 +89,9 @@
         $tempo = $_GET['tempo'];
         $data_plantada = $_GET['data_plantada'];
         
-        $cadastro->__set('data_colheita', $data_colheita);
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastro = $cadastroService->data($tempo, $data_plantada);
+
         
 
     }

@@ -4,6 +4,8 @@
     require_once "../controller/cadastro.controller.php";
 
 
+    echo "<h4><blockquote>Lista de Plantações</blockquote></h4>";
+    echo "<hr>";
 
     foreach($cadastro as $cadastro) { 
      echo '<div class="col s12 m6 l4">
@@ -14,7 +16,7 @@
             <p>Plantado em: '.$cadastro->data_plantada.'</p>
           </div>
           <div class="card-action">
-            <a href="index.php?link=9&id='.$cadastro->id.'">DATA PARA COLHEITA</a>
+            <a href="index.php?link=9&id='.$cadastro->id.'&acaocad=previsao">DATA PARA COLHEITA</a>
           </div>
         </div>
       </div>

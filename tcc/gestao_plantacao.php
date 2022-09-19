@@ -88,9 +88,19 @@
           </tbody>
         </table>
         <hr>
-        <h5 class='red-text text-accent-4'>Total Gasto: <?php echo $gastos; ?></h5>
+        <h5 class='red-text text-accent-4'>Total Gasto: <?php echo $gastos; ?>    
+          <a href="../phplot/bars-center-label3.php?valor_irrigacao=<?php echo $p_irrigacao; ?>&valor_tipo=<?php echo $p_tipo; ?>&valor_fertilizante=<?php echo $p_fertilizante; ?>" target="__blank" rel="noopener noreferrer" >
+          <i class="small material-icons">insert_chart</i>
+          </a>
+        </h5>
       </div>
       </div><?php
+        $_SESSION["p_irrigacao"] = $p_irrigacao;
+        $_SESSION["p_tipo"] = $p_tipo;
+        $_SESSION["p_fertilizante"] = $p_fertilizante;
+        $_SESSION["tipo"] = $tipo;
+        $_SESSION["nome"] = $nomePlanta;
+
       } else
       { ?>
         <div class="table col l8 m6 s12">

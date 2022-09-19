@@ -70,9 +70,13 @@
         }
         public function data($tempo, $data_plantada) 
         {
-            $query = "SELECT DATEADD ( DAY ,$tempo, $data_plantada)";
-
-
+            $query = "SELECT DATEADD ( DAY ,tempo = :tempo, data_plantada = :data_plantada)";
+            $stmt = $this->conexao->prepare($query);
+            $stmt->bindValue('tempo', $tempo);
+            $stmt->bindValue('data_plantada', $data_plantada);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+            
         }
     }
 

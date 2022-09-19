@@ -7,6 +7,8 @@
     
     echo "<blockquote><h5>Previsão para Colheita</h5></blockquote>";
     echo "<hr>";
+
+    $cadastro->data_plantada;
      
 ?>
 
