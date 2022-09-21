@@ -170,26 +170,26 @@ li.li {
                   <ul class="collapsible " data-collapsible="accordion">
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Cadastro da plantação</font></div>
-                      <div class="collapsible-body"><span><font size="4">Clique aqui para fazer <br> seu cadastro da plantação.</font></span>
-                      <a class="btn right " href="index.php?link=2"></a>
+                      <div class="collapsible-body"><div><font size="4">Clique aqui para fazer <br> seu cadastro da plantação.</font></div>
+                      <a class="btn right " href="index.php?link=2"><i class="material-icons">arrow_forward</i></a><br>
                     </div>
                     </li>
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Gestão de gastos</font></div>
-                      <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> sua gestão de gastos.</font></span>
-                      <a class="btn right" href="index.php?link=3&acaoCad=recuperar"></a>
+                      <div class="collapsible-body"><div><font size="4">Clique aqui para ver <br> sua gestão de gastos.</font></div>
+                      <a class="btn right" href="index.php?link=3&acaoCad=recuperar"><i class="material-icons">arrow_forward</i></a><br>
                     </div>
                     </li>
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Previsão para a colheita</font></div>
-                      <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> a previsão para a colheita.</font></span>
-                      <a class="btn right" href="index.php?link=8&acaoCad=recuperar"></a>
+                      <div class="collapsible-body"><div><font size="4">Clique aqui para ver <br> a previsão para a colheita.</font></div>
+                      <a class="btn right" href="index.php?link=8&acaoCad=recuperar"><i class="material-icons">arrow_forward</i></a><br>
                     </div>
                     </li>
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Tabela de lucros</font></div>
-                      <div class="collapsible-body"><span><font size="4">Clique aqui para ver <br> a tabela de lucros.</font></span>
-                      <a class="btn right" href="index.php?link=2"></a>
+                      <div class="collapsible-body"><div><font size="4">Clique aqui para ver <br> a tabela de lucros.</font></div>
+                      <a class="btn right" href="index.php?link=2"><i class="material-icons">arrow_forward</i></a><br>
                     </div>
                     </li>
                   </ul>

@@ -57,8 +57,7 @@
                 echo "<tr>".
                   "<td>".$cadastro->nomePlanta."</td>".
                   "<td>".$cadastro->data_plantada."</td>".
-                  "<td>".'<a class="waves-effect waves-light btn" id="cor"  href="confirmar.php?id='.$cadastro->id.'"><i class="large material-icons excluir">delete</i></a>'."</td>"
-                ."</tr>";  
+                  "<td>".'<a class="waves-effect waves-light btn tooltipped" id="cor" href="../controller/cadastro.controller.php?&id='.$cadastro->id.'&acaoCad=excluir" data-position="right" data-delay="50" data-tooltip="Excluir"><i class="large material-icons excluir">delete</i></a>'."</td>"                ."</tr>";  
                 }
               } else 
               {
@@ -66,7 +65,7 @@
                   echo "<tr>".
                   "<td>".$cadastro->nomePlanta."</td>".
                   "<td>".$cadastro->data_plantada."</td>".
-                  "<td>".'<a class="waves-effect waves-light btn"  href="index.php?link=5&id='.$cadastro->id.'&acaoCad=recuperarPlantacao"><i class="large material-icons">check</i></a>'."</td>"
+                  "<td>".'<a class="waves-effect waves-light btn tooltipped"  href="index.php?link=5&id='.$cadastro->id.'&acaoCad=recuperarPlantacao" data-position="right" data-delay="50" data-tooltip="Selecionar"><i class="large material-icons">check</i></a>'."</td>"
                 ."</tr>";  
                 }
               }
@@ -87,7 +86,7 @@
     <?php if ($acao == "excluir") echo'<a class="waves-effect waves-light btn"  href="index.php?link=3&acaoCad=recuperar"><i class="large material-icons">search</i>Consultar</a>';
           else echo'<a class="waves-effect waves-light btn" id="cor"  href="index.php?link=3&acaoCad=recuperar&acao=excluir"><i class="large material-icons">delete</i>Excluir</a>';
     ?>
-      <a class="waves-effect waves-light btn" id="alt" href="index.php?link=6"><i class="large material-icons">edit</i>Alterar</a><br>
+      <a class="waves-effect waves-light btn tooltipped" id="alt" href="index.php?link=6" data-position="bottom" data-delay="50" data-tooltip="Alterar Tarifa"><i class="large material-icons">edit</i>Alterar</a><br>
     <hr>
  
 <?php } ?>

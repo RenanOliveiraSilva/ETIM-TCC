@@ -57,6 +57,21 @@
     </div>
   </div>
   <div class="row">
+    <div class="input-field col l12 m12 s12">
+      <fieldset>
+      <legend> Tipo </legend>
+        <div>
+          <input name="group1" type="radio" id="test1" name="s" class="validate" value="s"/>
+          <label for="test1">Semente</label>
+        </div>
+        <div>
+          <input name="group1" type="radio" id="test2" name="m" class="validate" value="m"/>
+          <label for="test2">Muda</label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="row">
     <button class="btn waves-effect waves-light" type="submit" name="submit" value="<?php if(!isset($metodo)){echo 'inserir';}elseif($metodo=='alterar'){echo 'alterar';}else{echo 'remover';}?>">Enviar
       <i class="material-icons right">send</i>
     </button>
