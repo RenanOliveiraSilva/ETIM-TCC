@@ -68,16 +68,17 @@
             $stmt->execute();
             
         }
-        public function data($tempo, $data_plantada) 
+        public function inserirData($data, $id) 
         {
-            $query = "SELECT DATEADD ( DAY ,tempo = :tempo, data_plantada = :data_plantada)";
+            $query = "UPDATE cadastro SET data_colheita = :data_colheita WHERE id = :id";
+
             $stmt = $this->conexao->prepare($query);
-            $stmt->bindValue('tempo', $tempo);
-            $stmt->bindValue('data_plantada', $data_plantada);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_OBJ);
-            
+            $stmt->bindValue('data_colheita', $data);
+            $stmt->bindValue('id', $id);
+
+            $stmt->execute();            
         }
+
     }
 
 

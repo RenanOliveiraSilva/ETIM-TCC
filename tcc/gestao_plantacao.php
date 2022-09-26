@@ -19,6 +19,8 @@
 
     }
 
+    $data = new DateTime($data_plantada);
+
 ?>
 
 <!DOCTYPE html>
@@ -40,15 +42,14 @@
 
         <h6>Nome da Planta: <?php echo $nomePlanta;?></h6>  
         <h6>Quantidade de <?php if (strtolower($tipo) == "semente") echo "Sementes"; else echo "Mudas";?>: <?php echo $qtdPlantada;?></h6>
-        <h6>Data Plantada: <?php echo $data_plantada;?></h6>
+        <h6>Data Plantada: <?php echo $data->format('d-m-Y');?></h6>
         <h6>Quantidade de Irrigações por Dia: <?php echo $irrigacao;?></h6>
 
         <?php     
 
 
           if (!isset($p_irrigacao)) { 
-?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>&acaoCad=recuperarPlantacao">Inserir</a>
-            <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>&acaoCad=recuperarPlantacao">Alterar</a> <?php
+?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>&acaoCad=recuperarPlantacao">Inserir</a> <?php
           } else {
 ?>          <a class="waves-effect waves-light btn" href="index.php?link=7&id=<?php echo $id;?>&acaoCad=recuperarPlantacao">Alterar</a> <?php
           }
