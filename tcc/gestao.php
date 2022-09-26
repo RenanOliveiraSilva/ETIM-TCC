@@ -19,7 +19,7 @@
 
     if (isset($popUp)) {
       if ($popUp == "sucesso") {
-        echo "<input type='button' onclick='Sucesso()'>";
+       // echo "<input type='button' onclick='Sucesso()'>";
       }
     }
     
@@ -57,7 +57,7 @@
                 echo "<tr>".
                   "<td>".$cadastro->nomePlanta."</td>".
                   "<td>".$cadastro->data_plantada."</td>".
-                  "<td>".'<a class="waves-effect waves-light btn tooltipped" id="cor" href="../controller/cadastro.controller.php?&id='.$cadastro->id.'&acaoCad=excluir" data-position="right" data-delay="50" data-tooltip="Excluir"><i class="large material-icons excluir">delete</i></a>'."</td>"                ."</tr>";  
+                  "<td>".'<a class="waves-effect waves-light btn tooltipped" id="cor" href="confirmar.php?&id='.$cadastro->id.'&acaoCad=excluir" data-position="right" data-delay="50" data-tooltip="Excluir"><i class="large material-icons excluir">delete</i></a>'."</td>"                ."</tr>";  
                 }
               } else 
               {

@@ -20,6 +20,9 @@
     $qtdPlantada=$cadastro->qtdPlantada; 
     $tempo=$cadastro->tempo; 
     $irrigacao=$cadastro->irrigacao;
+    $p_irrigacao=$cadastro->p_irrigacao;
+    $p_tipo=$cadastro->p_tipo;
+    $p_fertilizante=$cadastro->p_fertilizante;
   }
 
 ?>
@@ -30,19 +33,19 @@
   </div>
   <div class="row">
     <div class="input-field col l12 m12 s12">
-      <input id="p_irrigacao" name="p_irrigacao" type="number" class="validate" required="">
+      <input id="p_irrigacao" name="p_irrigacao" type="number" class="validate" value="<?php if(isset($p_irrigacao)){echo $p_irrigacao;}else{echo '';}?>" required="">
       <label for="p_irrigacao">Quantidade de Litros Por Irrigação</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col l12 m12 s12">
-      <input id="p_tipo" name="p_tipo" type="text" class="validate" required="">
-      <label for="p_tipo">Preço das Semetentes/Mudas</label>
+      <input id="p_tipo" name="p_tipo" type="text" class="validate" value="<?php if(isset($p_tipo)){echo $p_tipo;}else{echo '';}?>" required="">
+      <label for="p_tipo">Preço das Semetentes/Mudas(Total)</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col l12 m12 s12">
-      <input id="p_fertilizante" name="p_fertilizante" type="text" class="validate">
+      <input id="p_fertilizante" name="p_fertilizante" type="text" value="<?php if(isset($p_fertilizante)){echo $p_fertilizante;}else{echo '';}?>" class="validate">
       <label for="p_fertilizante">Gasto Com fertilizantes</label>
     </div>
   </div>

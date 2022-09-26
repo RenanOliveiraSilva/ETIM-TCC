@@ -5,7 +5,6 @@
 
     @$acaoCad = isset($_GET['acaoCad'])?$_GET['acaoCad']:$acaoCad;
     @$id = $_GET['id'];
-
     //$acaoCad = "recuperarPlantacao";
 
     if ($acaoCad == "inserir") 
@@ -81,19 +80,17 @@
         $cadastro = $cadastroService->inserirGastos($id, $gastos);
         header("location: index.php?link=5&id=$id&acaoCad=recuperarPlantacao");
 
-    } elseif ($acaoCad == 'previsao') {
+    } elseif ($acaoCad == 'inserirData') {
 
         $cadastro = new Cadastro();
         $conexao = new Conexao();
 
-        $tempo = $_GET['tempo'];
-        $data_plantada = $_GET['data_plantada'];
+        $id = $_GET['id'];
+        $data = $_GET['data'];
         
         $cadastroService = new CadastroService($cadastro, $conexao);
-        $cadastro = $cadastroService->data($tempo, $data_plantada);
-
-        
-
+        $cadastro = $cadastroService->inserirData($data, $id);
+        header("location: ../tcc/index.php?link=9&acaoCad=recuperarPlantacao&id='.$id.'&data='.$data->format('Y-m-d').'");
     }
 
 

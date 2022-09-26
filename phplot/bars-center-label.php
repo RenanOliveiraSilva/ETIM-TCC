@@ -5,7 +5,7 @@
 # this script. The parameters are shown in the defaults array below:
 if (!isset($tp)) $tp = array();
 $tp = array_merge(array(
-  'title' => 'Gastos com a Plantação',
+  'title' => utf8_decode('Gastos com a Plantação'),
   'suffix' => "",           # Title part 2
   'ND' => 4,                # Number of data rows
   'NB' => 1,                # Number of bars per group
@@ -24,7 +24,7 @@ $tipo = $_SESSION['tipo'];
 
 # All the labels are A so we can look for centering.
 $data = array(
-  array("Irrigações", $irrigacao),
+  array(utf8_decode("Irrigações"), $irrigacao),
   array($tipo, $p_tipo),
   array("Fertilizantes", $fertilizante)
 );

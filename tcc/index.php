@@ -237,19 +237,6 @@ li.li {
                 $('.collapsible').collapsible();
                 });
 
-/*                 $(document).ready(function(){
-                    $('.slider').slider();
-                  });
-
-                // Pause slider
-                $('.slider').slider('pause');
-                // Start slider
-                $('.slider').slider('start');
-                // Next slide
-                $('.slider').slider('next');
-                // Previous slide
-                $('.slider').slider('prev'); */
-
                 $('.fixed-action-btn').openFAB();
                 $('.fixed-action-btn').closeFAB();
                 $('.fixed-action-btn.toolbar').openToolbar();
@@ -258,7 +245,8 @@ li.li {
                 $(document).ready(function(){
                   $('.tooltipped').tooltip({delay: 50});
                 });
-                
+
+
 
 
             </script>
