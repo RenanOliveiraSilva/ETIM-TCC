@@ -90,7 +90,11 @@
         
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastro = $cadastroService->inserirData($data, $id);
+<<<<<<< HEAD
         header("location: ../tcc/index.php?link=9&acaoCad=recuperarPlantacao&id='.$id.'&data='.$data->format('Y-m-d').'");
+=======
+        header("location: ../tcc/index.php?link=9&acaoCad=recuperar&id='.$id.'&data='.$data->format('Y-m-d').'");
+>>>>>>> ccd6d69ff4c8a08d2a21975f35a4fdc348682eae
     }
 
 
