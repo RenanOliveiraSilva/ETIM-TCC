@@ -9,6 +9,10 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+      <link rel="shortcut icon" href="imagem/logo.jpg">
+
+      <title>Contato</title>
+
         <style>
             html,body{
                 background:#4d2619; 

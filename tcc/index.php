@@ -24,6 +24,10 @@
 
       <link rel="stylesheet" href="css/index_tcc.css">
 
+      <link rel="shortcut icon" href="../imagem/logo.jpg">
+
+      <title>Private Agro</title>
+
       <style>
 html,
 body {
@@ -154,6 +158,17 @@ li.li {
 
   }
 
+  .inner-box{
+    height: 50%;
+    background-color: green;
+  }
+
+  .image-planta {
+    height: 100px;
+    width: 100px;
+    
+  }
+
       </style>
 
     </head>
@@ -209,6 +224,7 @@ li.li {
                       $pag[7]='gestao_form.php';
                       $pag[8]='previsao.php';
                       $pag[9]='previsao_plantacao.php';
+                      $pag[10]='vazio.php';
 
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {

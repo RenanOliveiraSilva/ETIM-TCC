@@ -8,7 +8,9 @@
       
       <script src="../script.js" defer></script>
       
-      <title>Private Agro</title>
+      <link rel="shortcut icon" href="../imagem/logo.jpg">
+
+      <title>Cadastrar</title>
 
 
     </head>
