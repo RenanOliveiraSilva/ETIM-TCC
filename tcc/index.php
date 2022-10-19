@@ -24,6 +24,10 @@
 
       <link rel="stylesheet" href="css/index_tcc.css">
 
+      <link rel="shortcut icon" href="../imagem/logo.jpg">
+
+      <title>Private Agro</title>
+
       <style>
 html,
 body {

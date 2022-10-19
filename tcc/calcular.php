@@ -21,7 +21,6 @@
     } else {
         location.href = "index.php";
 
-
     }
 
 
