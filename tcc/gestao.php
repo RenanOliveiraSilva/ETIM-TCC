@@ -59,17 +59,22 @@
                   "<td>".$cadastro->nomePlanta."</td>".
                   "<td>".$cadastro->data_plantada."</td>".
                   "<td>".'<a class="waves-effect waves-light btn tooltipped" id="cor" href="confirmar.php?&id='.$cadastro->id.'&acaoCad=excluir" data-position="right" data-delay="50" data-tooltip="Excluir"><i class="large material-icons excluir">delete</i></a>'."</td>"                ."</tr>";  
+
+                
+                }
+
                 echo "</tbody>";
                 echo "</table>";
-                
-                echo "<hr>"; 
+
+                echo "<hr>";
+
                  if ($acao == "excluir") echo'<a class="waves-effect waves-light btn"  href="index.php?link=3&acaoCad=recuperar"><i class="large material-icons">search</i>Consultar</a>';
                       else echo'<a class="waves-effect waves-light btn" id="cor"  href="index.php?link=3&acaoCad=recuperar&acao=excluir"><i class="large material-icons">delete</i>Excluir</a>';
                 
                 echo '<a class="waves-effect waves-light btn tooltipped" id="alt" href="index.php?link=6" data-position="bottom" data-delay="50" data-tooltip="Alterar Tarifa"><i class="large material-icons">edit</i>Alterar</a><br>';
                 echo "<hr>";
 
-                }
+                
               } else 
               {
                 foreach ($cadastro as $cadastro) {
@@ -78,6 +83,10 @@
                   "<td>".$cadastro->data_plantada."</td>".
                   "<td>".'<a class="waves-effect waves-light btn tooltipped"  href="index.php?link=5&id='.$cadastro->id.'&acaoCad=recuperarPlantacao" data-position="right" data-delay="50" data-tooltip="Selecionar"><i class="large material-icons">check</i></a>'."</td>"
                 ."</tr>";
+
+
+                }
+
                 echo "</tbody>";
                 echo "</table>";
 
@@ -87,7 +96,7 @@
                
                echo '<a class="waves-effect waves-light btn tooltipped" id="alt" href="index.php?link=6" data-position="bottom" data-delay="50" data-tooltip="Alterar Tarifa"><i class="large material-icons">edit</i>Alterar</a><br>';
                echo "<hr>";
-                }
+                
               }
 
             } else {
@@ -119,5 +128,4 @@ function Sucesso() {
 }
 
 </script>
-
 

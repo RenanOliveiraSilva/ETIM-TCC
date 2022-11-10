@@ -204,7 +204,7 @@ li.li {
                     <li class="li">
                       <div class="collapsible-header"><font size="5">Tabela de lucros</font></div>
                       <div class="collapsible-body"><div><font size="4">Clique aqui para ver <br> a tabela de lucros.</font></div>
-                      <a class="btn right" href="index.php?link=2"><i class="material-icons">arrow_forward</i></a><br>
+                      <a class="btn right" href="index.php?link=10&acaoCad=recuperar"><i class="material-icons">arrow_forward</i></a><br>
                     </div>
                     </li>
                   </ul>
@@ -224,7 +224,7 @@ li.li {
                       $pag[7]='gestao_form.php';
                       $pag[8]='previsao.php';
                       $pag[9]='previsao_plantacao.php';
-                      $pag[10]='vazio.php';
+                      $pag[10]='lucros.php';
 
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {
