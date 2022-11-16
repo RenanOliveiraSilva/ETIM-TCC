@@ -22,13 +22,16 @@
               echo "<hr>";
 
                 foreach($cadastro as $cadastro) {
+                  $p = "";
+
+                  if (empty($cadastro->gastos)) {$p = "Valor Indefinido";} else {$p = "R$".$cadastro->gastos;}
 
                 echo '<div class="col s12 m6 l4">
                   <div class="card horizontal">
                     <div class="card-stacked">
                       <div class="card-content">
                         <p><b>'.strtoupper($cadastro->nomePlanta).'</b></p>
-                        <p>Gastos com a Plantação: <b>R$'.$cadastro->gastos.'</b></p>
+                        <p>Gastos com a Plantação: <b>'.$p.'</b></p>
                       </div>
                       <div class="card-action">
                         <a href="index.php">CALCULAR LUCROS</a>

@@ -28,7 +28,7 @@
 
         public function recuperar($id_users) 
         {
-           $query = "select * from cadastro where id_users = :id_users";
+           $query = "select * from cadastro where id_users = :id_users and status = 'p' ";
 
            $stmt = $this->conexao->prepare($query);
            $stmt->bindValue('id_users', $id_users);

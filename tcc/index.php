@@ -124,7 +124,6 @@ li.li {
   }
   
   
-  
   #cor{
   
     background-color: #ff0000;
@@ -169,6 +168,11 @@ li.li {
     
   }
 
+  .btn5 {
+    background-color: #14870c;
+    width: 100%;
+  }
+
       </style>
 
     </head>
@@ -208,7 +212,16 @@ li.li {
                     </div>
                     </li>
                   </ul>
+
+                  <div class="row">
+                  <div class="botao">
+                    <!-- <br> -->
+                    <a class="waves-effect waves-light btn" href="index.php?link=12"><i class="material-icons left">cloud</i>button</a>
+                  </div>
                 </div>
+
+                </div>
+
 
                 <div class="col s12 m8 l9 content">
 
@@ -225,6 +238,8 @@ li.li {
                       $pag[8]='previsao.php';
                       $pag[9]='previsao_plantacao.php';
                       $pag[10]='lucros.php';
+                      $pag[11]='lucros_plantacao.php';
+                      $pag[12]='lista.php';
 
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {

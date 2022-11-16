@@ -14,6 +14,8 @@
         private $p_tipo;
         private $p_fertilizante;
         private $gastos;
+        private $p;
+
         
         public function __set($atributo,$valor){
             $this->$atributo = $valor;
