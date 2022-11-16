@@ -216,7 +216,7 @@ li.li {
                   <div class="row">
                   <div class="botao">
                     <!-- <br> -->
-                    <a class="waves-effect waves-light btn" href="index.php?link=12"><i class="material-icons left">cloud</i>button</a>
+                    <a class="waves-effect waves-light btn" href="index.php?link=12&acaoCad=recuperar"><i class="material-icons left">cloud</i>button</a>
                   </div>
                 </div>
 

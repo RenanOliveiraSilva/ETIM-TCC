@@ -78,6 +78,16 @@
 
             $stmt->execute();            
         }
+        public function recuperarColheita($id_users) 
+        {
+           $query = "select * from cadastro where id_users = :id_users and status = 'c' ";
+
+           $stmt = $this->conexao->prepare($query);
+           $stmt->bindValue('id_users', $id_users);
+           $stmt->execute();
+           return $stmt->fetchALL(PDO::FETCH_OBJ);
+
+        }
 
     }
 
