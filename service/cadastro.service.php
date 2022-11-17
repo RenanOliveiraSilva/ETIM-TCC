@@ -28,7 +28,7 @@
 
         public function recuperar($id_users) 
         {
-           $query = "select * from cadastro where id_users = :id_users and status = 'p' ";
+           $query = "select * from cadastro where id_users = :id_users and status = 'Plantado' ";
 
            $stmt = $this->conexao->prepare($query);
            $stmt->bindValue('id_users', $id_users);
@@ -80,7 +80,7 @@
         }
         public function recuperarColheita($id_users) 
         {
-           $query = "select * from cadastro where id_users = :id_users and status = 'c' ";
+           $query = "select * from cadastro where id_users = :id_users and status = 'Colhido' ";
 
            $stmt = $this->conexao->prepare($query);
            $stmt->bindValue('id_users', $id_users);

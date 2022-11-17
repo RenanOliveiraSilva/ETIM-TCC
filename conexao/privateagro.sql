@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Set-2022 às 18:27
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 17-Nov-2022 às 01:20
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,37 +40,16 @@ CREATE TABLE `cadastro` (
   `p_irrigacao` decimal(6,2) DEFAULT NULL,
   `p_tipo` decimal(6,2) DEFAULT NULL,
   `p_fertilizante` decimal(6,2) DEFAULT NULL,
-  `gastos` decimal(6,2) DEFAULT NULL
+  `gastos` decimal(6,2) DEFAULT NULL,
+  `status` char(8) NOT NULL DEFAULT 'Plantado'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `cadastro`
 --
 
-INSERT INTO `cadastro` (`id`, `id_users`, `nomePlanta`, `tipo`, `qtdPlantada`, `tempo`, `data_plantada`, `data_colheita`, `irrigacao`, `p_irrigacao`, `p_tipo`, `p_fertilizante`, `gastos`) VALUES
-(1, 5, 'Alface', 'Semente', 500, 250, '2022-06-18', NULL, 500, NULL, NULL, NULL, NULL),
-(4, 3, 'Pimenta', 'Muda', 100, 250, '2022-06-18', NULL, 100, NULL, NULL, NULL, NULL),
-(5, 2, 'Soja', 'Semente', 100, 300, '2022-06-18', NULL, 100, '9999.99', '200.00', '350.00', '9999.99'),
-(13, 2, 'Teste', 'Teste', 123, 52, '2022-07-31', NULL, 122, NULL, NULL, NULL, NULL),
-(14, 2, 'teste', 'teste', 0, 123, '2022-08-03', NULL, 210, NULL, NULL, NULL, NULL),
-(32, 1, 'Milho', 'Semente', 600, 60, '2022-09-22', NULL, 2, '4248.00', '300.00', '500.00', '5048.00');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `teste`
---
-
-CREATE TABLE `teste` (
-  `data` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `teste`
---
-
-INSERT INTO `teste` (`data`) VALUES
-('2022-02-02');
+INSERT INTO `cadastro` (`id`, `id_users`, `nomePlanta`, `tipo`, `qtdPlantada`, `tempo`, `data_plantada`, `data_colheita`, `irrigacao`, `p_irrigacao`, `p_tipo`, `p_fertilizante`, `gastos`, `status`) VALUES
+(15, 1, 'Milho', 'Sementes', 123, 100, '2022-11-16', NULL, 2, NULL, NULL, NULL, NULL, 'Plantado');
 
 -- --------------------------------------------------------
 
@@ -120,7 +99,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `users`

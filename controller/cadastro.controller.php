@@ -93,6 +93,15 @@
 
         header("location: ../tcc/index.php?link=9&acaoCad=recuperarPlantacao&id=$id&data=$data->format('Y-m-d')");
 
+    } elseif ($acaoCad == "recuperarColheita")
+    {
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+        $id_users = $_SESSION['id'];
+        
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastro = $cadastroService->recuperarColheita($id_users);
+
     }
 
 

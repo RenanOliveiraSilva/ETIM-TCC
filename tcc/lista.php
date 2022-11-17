@@ -14,16 +14,20 @@
 
     echo "<h4><blockquote>Lista de Plantações</blockquote></h4>";
     echo "<hr>";
-    echo '<a class="waves-effect waves-light btn" href="index.php?link=12"><i class="material-icons left">cloud</i>button</a>';
-    echo '<a class="waves-effect waves-light btn" href="index.php?link=12"><i class="material-icons left">cloud</i>button</a>';
+
+    if ($acaoCad == "recuperarColheita") {
+        echo '<a class="waves-effect waves-light btn" href="index.php?link=12&acaoCad=recuperar"><i class="material-icons left">cloud</i>button</a>';
+    } else {
+        echo '<a class="waves-effect waves-light btn" href="index.php?link=12&acaoCad=recuperarColheita"><i class="material-icons left">cloud</i>button</a>';
+    }
+
 
     echo "<hr>";
 
     $modo = "p";
 
-    if ($modo = "p" ) {
+    if ($acaoCad == "recuperar" ) {
 
-        $acaoCad == "recuperar";
 
         echo '
         <table class = "highlight">
@@ -44,17 +48,55 @@
             echo '
                 <tr>
                 <td>'.$cadastro->nomePlanta.'</td>
-                <td>'.$cadastro->id.'</td>
+                <td>'.$cadastro->status.'</td>
                 <td><i class="small material-icons">assignment</i></td>
                 </tr>
 
-                </tbody>
-                </table>
             ';
         
         }
+
+            echo ' </tbody>
+                  </table>';
      
-    }   
+    }   else
+
+    {
+        if (!empty($cadastro)) {
+            echo '
+            <table class = "highlight">
+            <thead>
+            <tr>
+            <th>Nome Plantação</th>
+            <th>Status</th>
+            <th>Excluir</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            ';
+
+            foreach ($cadastro as $cadastro) {
+
+                echo '
+                    <tr>
+                    <td>'.$cadastro->nomePlanta.'</td>
+                    <td>'.$cadastro->status.'</td>
+                    <td><i class="small material-icons">assignment</i></td>
+                    </tr>
+
+                ';
+            
+            }
+
+                echo ' </tbody>
+                    </table>';
+        } else {
+            
+        }
+
+    }
     
 
 
