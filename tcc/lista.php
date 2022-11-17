@@ -29,40 +29,62 @@
     if ($acaoCad == "recuperar" ) {
 
 
-        echo '
-        <table class = "highlight">
-        <thead>
-        <tr>
-        <th>Nome Plantação</th>
-        <th>Status</th>
-        <th>Guardar</th>
-        </tr>
-        </thead>
-
-        <tbody>
-
-        ';
-
-        foreach ($cadastro as $cadastro) {
+        if (!empty($cadastro)) {
 
             echo '
+            <table class = "highlight">
+            <thead>
+            <tr>
+            <th>Nome Plantação</th>
+            <th>Status</th>
+            <th>Guardar</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            ';
+
+            foreach ($cadastro as $cadastro) {
+
+                echo '
                 <tr>
                 <td>'.$cadastro->nomePlanta.'</td>
                 <td>'.$cadastro->status.'</td>
-                <td><i class="small material-icons">assignment</i></td>
+                <td><a class="waves-effect waves-light btn" href="../controller/cadastro.controller.php?acaoCad=guardar&id='.$cadastro->id.'"><i class="material-icons">assignment</i></a></td>
+
                 </tr>
 
-            ';
-        
-        }
+                ';
+
+            }
 
             echo ' </tbody>
-                  </table>';
-     
+            </table>';
+
+        } else 
+        {
+            echo ' 
+            <table class ="highlight">
+              <thead>
+                <tr>
+                    <th>Insira uma Plantação </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="waves-effect waves-light btn"  href="index.php?link=2"><i class="large material-icons">add</i>Inserir</a></td>
+                </tr>
+              </tbody>
+            </table>';            
+        }
+
     }   else
 
     {
+
         if (!empty($cadastro)) {
+
             echo '
             <table class = "highlight">
             <thead>
@@ -79,25 +101,41 @@
 
             foreach ($cadastro as $cadastro) {
 
-                echo '
-                    <tr>
-                    <td>'.$cadastro->nomePlanta.'</td>
-                    <td>'.$cadastro->status.'</td>
-                    <td><i class="small material-icons">assignment</i></td>
-                    </tr>
+            echo '
+            <tr>
+            <td>'.$cadastro->nomePlanta.'</td>
+            <td>'.$cadastro->status.'</td>
+            <td><a class="waves-effect waves-light btn" id="cor"  href="confirmar1.php?&id='.$cadastro->id.'&acaoCad=excluir1"><i class="large material-icons">delete</i>Excluir</a></td>
+            </tr>
 
-                ';
-            
+            ';
+
             }
 
-                echo ' </tbody>
-                    </table>';
-        } else {
-            
+            echo ' </tbody>
+            </table>';
+
+        } else 
+
+        {
+            echo ' 
+            <table class ="highlight">
+              <thead>
+                <tr>
+                    <th>Insira uma Plantação </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="waves-effect waves-light btn"  href="index.php?link=2"><i class="large material-icons">add</i>Inserir</a></td>
+                </tr>
+              </tbody>
+            </table>';
         }
 
+
     }
-    
+
 
 
 

@@ -88,6 +88,18 @@
            return $stmt->fetchALL(PDO::FETCH_OBJ);
 
         }
+        public function guardar($id) 
+        {
+            $query = "UPDATE cadastro SET status = :status WHERE id = :id";
+
+            $msg = "Colhido";
+
+            $stmt = $this->conexao->prepare($query);
+            $stmt->bindValue('status', $msg);
+            $stmt->bindValue('id', $id);
+
+            $stmt->execute();            
+        }
 
     }
 
