@@ -173,6 +173,11 @@ li.li {
     width: 100%;
   }
 
+  #bn{
+    width: 100%;
+    background-color: #366921;
+  }
+
       </style>
 
     </head>
@@ -216,7 +221,7 @@ li.li {
                   <div class="row">
                   <div class="botao">
                     <!-- <br> -->
-                    <a class="waves-effect waves-light btn" href="index.php?link=12&acaoCad=recuperar"><i class="material-icons left">cloud</i>button</a>
+                    <a id="bn" class="waves-effect waves-light btn" href="index.php?link=12&acaoCad=recuperar"><i class="material-icons left">account_circle</i>Minha Lista</a>
                   </div>
                 </div>
 
@@ -240,6 +245,7 @@ li.li {
                       $pag[10]='lucros.php';
                       $pag[11]='lucros_plantacao.php';
                       $pag[12]='lista.php';
+                      $pag[13]='lucros_plantacao.php';
 
                       if(!empty($link)) {
                         if (file_exists($pag[$link])) {

@@ -112,8 +112,8 @@
 
             <div class="slide">
                 <div class="inner_content">
-                    <h1>slide 3</h1>
-                    <p>jdhbfjhbsadfjbhjdbf</p>
+                    <h1></h1>
+                    <p></p>
                 </div>
             </div>
         </div>

@@ -93,6 +93,16 @@
 
         header("location: ../tcc/index.php?link=9&acaoCad=recuperarPlantacao&id=$id&data=$data->format('Y-m-d')");
 
+    } elseif ($acaoCad == "guardar")
+    {
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+        $id = $_GET['id'];
+        
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastro = $cadastroService->guardar($id);
+        header("location: ../tcc/index.php?link=12&acaoCad=recuperar");
+
     } elseif ($acaoCad == "recuperarColheita")
     {
         $cadastro = new Cadastro();
@@ -102,6 +112,34 @@
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastro = $cadastroService->recuperarColheita($id_users);
 
+
+    } elseif ($acaoCad == "excluir1") 
+    {
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastroService->excluir($id);
+        header("location: ../tcc/index.php?link=12&acaoCad=recuperar");
+
+    } elseif ($acaoCad = "InserirLucros") 
+    {
+        $cadastro = new Cadastro();
+        $conexao = new Conexao();
+
+        $gastos = $_GET['gasto'];
+        $lucro = $_POST['vendas'];
+
+        $lucro = $lucro - $gastos;
+        
+        $cadastro->__set('lucros',$lucro);
+
+        echo $lucro;    
+
+        $cadastroService = new CadastroService($cadastro, $conexao);
+        $cadastroService->inserirLucro($lucro, $id);
+
+        header("location: ../tcc/index.php?link=13&id=$id&acaoCad=recuperarPlantacao");
     }
 
 

@@ -1,7 +1,6 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
   <li><a href="index.php">Home</a></li>
-  <li><a href="#!">Minha Conta</a></li>
   <li class="divider"></li>
   <li><a href="../login/logout.php">Sair</a></li>
 </ul>

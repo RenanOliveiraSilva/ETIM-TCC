@@ -34,7 +34,7 @@
                         <p>Gastos com a Plantação: <b>'.$p.'</b></p>
                       </div>
                       <div class="card-action">
-                        <a href="index.php">CALCULAR LUCROS</a>
+                        <a href="index.php?link=13&id='.$cadastro->id.'&acaoCad=recuperarPlantacao">CALCULAR LUCROS</a>
                       </div>
                     </div>
                   </div>
