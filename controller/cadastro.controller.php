@@ -122,6 +122,7 @@
         $cadastroService->excluir($id);
         header("location: ../tcc/index.php?link=12&acaoCad=recuperar");
 
+<<<<<<< HEAD
     } elseif ($acaoCad = "InserirLucros") 
     {
         $cadastro = new Cadastro();
@@ -140,6 +141,8 @@
         $cadastroService->inserirLucro($lucro, $id);
 
         header("location: ../tcc/index.php?link=13&id=$id&acaoCad=recuperarPlantacao");
+=======
+>>>>>>> 5df953c5b2cb8b88b78175e576a6885a4d4d6df7
     }
 
 

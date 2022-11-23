@@ -32,6 +32,7 @@
       echo "<hr>";
 
         if (!empty($cadastro)) {
+<<<<<<< HEAD
 
 
 
@@ -75,18 +76,46 @@
               }
 
               if (!empty($cadastro->data_colheita & $cadastro->lucro)) {
+=======
+
+            echo '
+            <table class = "highlight">
+            <thead>
+            <tr>
+            <th>Nome Plantação</th>
+            <th>Status</th>
+            <th>Guardar</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            ';
+
+            foreach ($cadastro as $cadastro) {
+
+>>>>>>> 5df953c5b2cb8b88b78175e576a6885a4d4d6df7
                 echo '
                 <tr>
                 <td>'.$cadastro->nomePlanta.'</td>
                 <td>'.$cadastro->status.'</td>
+<<<<<<< HEAD
                 <td><a class="waves-effect waves-light btn" style='.$b2.' href='.$b1.'><i class="material-icons">assignment</i></a></td>
   
+=======
+                <td><a class="waves-effect waves-light btn" href="../controller/cadastro.controller.php?acaoCad=guardar&id='.$cadastro->id.'"><i class="material-icons">assignment</i></a></td>
+
+>>>>>>> 5df953c5b2cb8b88b78175e576a6885a4d4d6df7
                 </tr>
   
                 ';
               }
 
 
+<<<<<<< HEAD
+=======
+                ';
+>>>>>>> 5df953c5b2cb8b88b78175e576a6885a4d4d6df7
 
             }
 
@@ -114,6 +143,7 @@
 
     {
 
+<<<<<<< HEAD
       echo "<h4><blockquote>Lista de Plantações Colhidas   </blockquote></h4>";
       echo "<hr>";
   
@@ -125,6 +155,8 @@
   
       echo "<hr>";
 
+=======
+>>>>>>> 5df953c5b2cb8b88b78175e576a6885a4d4d6df7
         if (!empty($cadastro)) {
 
             echo '
@@ -147,7 +179,11 @@
             <tr>
             <td>'.$cadastro->nomePlanta.'</td>
             <td>'.$cadastro->status.'</td>
+<<<<<<< HEAD
             <td><a class="waves-effect waves-light btn" id="cor"  href="confirmar1.php?&id='.$cadastro->id.'&acaoCad=excluir1"><i class="large material-icons">delete</i></a></td>
+=======
+            <td><a class="waves-effect waves-light btn" id="cor"  href="confirmar1.php?&id='.$cadastro->id.'&acaoCad=excluir1"><i class="large material-icons">delete</i>Excluir</a></td>
+>>>>>>> 5df953c5b2cb8b88b78175e576a6885a4d4d6df7
             </tr>
 
             ';
