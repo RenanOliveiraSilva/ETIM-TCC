@@ -34,21 +34,6 @@
         if (!empty($cadastro)) {
 
 
-
-            echo '
-            <table class = "highlight">
-            <thead>
-            <tr>
-            <th>Nome Plantação</th>
-            <th>Status</th>
-            <th>Guardar</th>
-            </tr>
-            </thead>
-
-            <tbody>
-
-            ';
-
             foreach ($cadastro as $cadastro) {
 
               $colheita = $cadastro->data_colheita;
@@ -74,7 +59,22 @@
                 $b2 = "background-color:#D1451B;";
               }
 
-              if (!empty($cadastro->data_colheita & $cadastro->lucro)) {
+              if (!empty($cadastro->data_colheita && $cadastro->lucro)) {
+
+                echo '
+                <table class = "highlight">
+                <thead>
+                <tr>
+                <th>Nome Plantação</th>
+                <th>Status</th>
+                <th>Guardar</th>
+                </tr>
+                </thead>
+    
+                <tbody>
+    
+                ';
+
                 echo '
                 <tr>
                 <td>'.$cadastro->nomePlanta.'</td>
@@ -84,7 +84,26 @@
                 </tr>
   
                 ';
+              } else 
+
+              {
+
+                
+                  echo ' 
+                  <table class ="highlight">
+                    <thead>
+                      <tr>
+                          <th>Insira uma Plantação </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a class="waves-effect waves-light btn"  href="index.php?link=2"><i class="large material-icons">add</i>Inserir</a></td>
+                      </tr>
+                    </tbody>
+                  </table>';
               }
+      
 
 
 
@@ -147,11 +166,9 @@
             <tr>
             <td>'.$cadastro->nomePlanta.'</td>
             <td>'.$cadastro->status.'</td>
-<<<<<<< HEAD
+
             <td><a class="waves-effect waves-light btn" id="cor"  href="confirmar1.php?&id='.$cadastro->id.'&acaoCad=excluir1"><i class="large material-icons">delete</i></a></td>
-=======
-            <td><a class="waves-effect waves-light btn" id="cor"  href="confirmar1.php?&id='.$cadastro->id.'&acaoCad=excluir1"><i class="large material-icons">delete</i>Excluir</a></td>
->>>>>>> 5df953c5b2cb8b88b78175e576a6885a4d4d6df7
+
             </tr>
 
             ';

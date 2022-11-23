@@ -133,8 +133,7 @@
         $lucro = $lucro - $gastos;
         
         $cadastro->__set('lucros',$lucro);
-
-        echo $lucro;    
+   
 
         $cadastroService = new CadastroService($cadastro, $conexao);
         $cadastroService->inserirLucro($lucro, $id);

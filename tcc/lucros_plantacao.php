@@ -5,8 +5,8 @@
 
     $id = $_GET['id'];
 
-
     foreach ($cadastro as $cadastro)
+    
     {
         if ($cadastro->lucro >= 0) {
             $p = "Lucro";
@@ -16,7 +16,7 @@
             $b = "background-color:#D1451B;";
         }
 
-        if (empty($cadastro->lucro))
+        if ($cadastro->lucro == 0)
         {
             echo "<blockquote><h4>Insira o Lucro da Plantação</h4></blockquote>";
             echo "<hr>";
