@@ -100,7 +100,6 @@
 
             $stmt->execute();            
         }
-<<<<<<< HEAD
         public function inserirLucro($lucro, $id) {
             $query = "UPDATE cadastro SET lucro = :lucro WHERE id = :id";
 
@@ -110,8 +109,6 @@
 
             $stmt->execute(); 
         }
-=======
->>>>>>> 5df953c5b2cb8b88b78175e576a6885a4d4d6df7
 
     }
 
